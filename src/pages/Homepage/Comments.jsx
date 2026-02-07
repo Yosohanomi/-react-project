@@ -1,3 +1,4 @@
+import { Container } from "../../components/Container/Container"
 export const filledStar = '../../images/products/star_filled.png'
 export const right = '../../images/arrows/right.png'
 export const left = '../../images/arrows/left.png'
@@ -5,6 +6,7 @@ export const left = '../../images/arrows/left.png'
 export const Comments = () => {
     return <>
         <section className="comments">
+            <Container>
             <h2 className="comments__title">Останні відгуки</h2>
             <ul className="comments__list">
                 <li className="comments__item">
@@ -56,7 +58,7 @@ export const Comments = () => {
                     <img src={left} alt="left arrow" className="comments__img-left" />
                 </button>
             </div>
-            
+            </Container>
         </section>
     </>
 }

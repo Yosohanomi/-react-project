@@ -2,6 +2,7 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { ProductCard } from "../../components/Product/ProductCard";
 import { SidebarProducts } from "./SidebarProducts";
+import { Container } from "../../components/Container/Container";
 
 export const CategoriesList = () => {
     return <>
@@ -9,21 +10,23 @@ export const CategoriesList = () => {
         <main>
             <SidebarProducts/>
             <section className="products">
-                <ul className="products__list">
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                </ul>
-                <button className="products__btn">Показати більше</button>
+                <Container>
+                    <ul className="products__list">
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                        <ProductCard/>
+                    </ul>
+                    <button className="products__btn">Показати більше</button>
+                </Container>
             </section>
         </main>
         <Footer/>
