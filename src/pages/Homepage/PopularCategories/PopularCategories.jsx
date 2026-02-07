@@ -1,5 +1,5 @@
-import { CategoryCard } from '../../components/Category/CategoryCard'
-import { Container } from '../../components/Container/Container'
+import { CategoryCard } from '../../../components/Category/CategoryCard'
+import { Container } from '../../../components/Container/Container'
 export const right = '../../images/arrows/right.png'
 export const left = '../../images/arrows/left.png'
 export const PopularCategories = () => {

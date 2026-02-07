@@ -1,5 +1,5 @@
-import { ProductCard } from '../../components/Product/ProductCard';
-import { Container } from '../../components/Container/Container';
+import { ProductCard } from '../../../components/Product/ProductCard';
+import { Container } from '../../../components/Container/Container';
 export const right = '../../images/arrows/right.png'
 export const left = '../../images/arrows/left.png'
 export const PopularProducts = () => {

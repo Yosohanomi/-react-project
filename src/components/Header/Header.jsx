@@ -1,7 +1,9 @@
 import styles from './Header.module.css';
 import { Container } from '../Container/Container';
-export const coffeeLogo = '../../images/header-images/coffee_maker.png';
-export const shoppingCart = '../../images/header-images/shopping_cart.png';
+import { Logo } from '../Logo/Logo';
+import { YellowBtn } from '../YellowBtn/YellowBtn';
+import { GrayBtn } from '../GrayBtn/GrayBtn';
+import shoppingCart from '../../images/header-images/shopping_cart.png';
 
 
 export const Header = () => {
@@ -9,21 +11,19 @@ export const Header = () => {
     return <>
         <header className={styles.header}>
         <Container>
-            <a href="#" className={styles.header__link}>
-                    <img src={coffeeLogo} alt="coffeeLogo" className={styles.header__logo} />
-                </a>
-                <nav className="header__nav">
-                    <ul className="header__list">
-                        <li className="header__item">Головна</li>
-                        <li className="header__item">Товари</li>
-                        <li className="header__item">Категорії</li>
+            <Logo/>
+                <nav className={styles.header__nav}>
+                    <ul className={styles.header__list}>
+                        <li className={styles.header__item}><a href="#" className={styles.header__link}>Головна</a></li>
+                        <li className={styles.header__item}><a href="#" className={styles.header__link}>Товари</a></li>
+                        <li className={styles.header__item}><a href="#" className={styles.header__link}>Категорії</a></li>
                     </ul>
                 </nav>
-                <div className="header__thumb">
-                    <button className="header__btn enter__btn">Вхід</button>
-                    <button className="header__btn register__btn">Реєстрація</button>
-                    <button className="header__btn shopping-cart">
-                        <img src="#" alt="shopping cart" className="header__img" />
+                <div className={styles.header__thumb}>
+                    <GrayBtn text='Вхід'/>
+                    <YellowBtn text='Реєстрація'/>
+                    <button className={styles.header__btn}>
+                        <img src={shoppingCart} alt="shopping cart" className={styles.header__img} />
                     </button>
                 </div>
         </Container>

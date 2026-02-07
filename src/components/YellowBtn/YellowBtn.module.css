@@ -1,0 +1,19 @@
+.yellow__btn {
+    border: none;
+    text-align: center;
+    border-radius: 100px;
+    padding: 4px 10px;
+    width: 109px;
+    height: 32px;
+    background-color: #FBC74C;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    transition: all 0.3s ease-out;
+}
+
+.yellow__btn:hover,
+.yellow__btn:focus {
+    border: 1px solid #644F1E;
+    background-color: #C89F3C;
+}

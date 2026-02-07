@@ -1,0 +1,20 @@
+.btn {
+    border: none;
+    background-color:  rgba(0, 0, 0, 0.036);
+    border-radius: 100px;
+    text-align: center;
+    padding: 4px 10px;
+    height: 32px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    transition: all 0.3s ease-out;
+}
+
+.btn:hover,
+.btn:focus {
+    border: 1px solid rgba(0, 0, 0, 0.478);
+    background-color:  rgba(0, 0, 0, 0.232);
+}

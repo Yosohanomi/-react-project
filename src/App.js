@@ -1,5 +1,6 @@
 import './App.css';
 import { Homepage } from './pages/Homepage/Homepage';
+import resetCss from './components/Reset/Reset.css'
 
 function App() {
   return (
