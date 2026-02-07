@@ -1,0 +1,24 @@
+.products > div {
+    position: relative;
+    padding-top: 84px;
+}
+
+.products__thumb {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.products__title {
+
+}
+
+.products__btn {
+    position: absolute;
+    top: 18;
+    right: 2%;
+}
+
+.products__list {
+    display: flex;
+    gap: 32px;
+}
