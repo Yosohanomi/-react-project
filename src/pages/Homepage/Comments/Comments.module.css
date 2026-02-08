@@ -1,0 +1,46 @@
+.comments {
+    text-align: left;
+}
+
+.comments__title {
+    padding-top: 48px;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #000;
+    margin-bottom: 40px;
+}
+
+.comments__list {
+    display: flex;
+    gap: 32px;
+}
+
+
+
+
+
+.pagination__thumb {
+    position: relative;
+    padding-bottom: 112px;
+}
+
+.pagination {
+
+}
+
+.comments__left {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.comments__right {
+    position: absolute;
+    top: 0;
+    right: 57px;
+}

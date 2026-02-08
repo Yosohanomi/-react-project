@@ -1,50 +1,51 @@
 import { Container } from "../Container/Container";
-export const coffeeLogo = '../../images/header-images/coffee_maker.png';
-export const facebook = '../../images/footer/facebook.png'
-export const instagram = '../../images/footer/instagram.png'
-export const twitter = '../../images/footer/x.png'
-export const youtube = '../../images/footer/youtube.png'
+import { GrayBtn } from "../GrayBtn/GrayBtn";
+import { Input } from "../Input/Input";
+import { Logo } from "../Logo/Logo";
+import styles from './Footer.module.css'
+import facebook from '../../images/footer/facebook.png'
+import instagram from '../../images/footer/instagram.png'
+import twitter from '../../images/footer/x.png'
+import youtube from '../../images/footer/youtube.png'
 
 export const Footer = () => {
     return <>
-        <footer>
+        <footer className={styles.footer}>
             <Container>
-                <div className="footer__thumb">
-                    <a href="#" className="header__link">
-                        <img src={coffeeLogo} alt="coffeeLogo" className="header__logo" />
-                    </a>
-                    <div className="footer__menu">
-                        <h5 className="footer__menu__title">Меню</h5>
-                        <a className="footer__menu__text">Головна</a>
-                        <a className="footer__menu__text">Товари</a>
-                        <a className="footer__menu__text">Категорії</a>
+                <div className={styles.footer__thumb}>
+                <Logo/>
+                    <div className={styles.footer__menu}>
+                        <h5 className={styles.footer__menu__title}>Меню</h5>
+                        <a href="#" className={styles.footer__menu__text}>Головна</a>
+                        <a href="#" className={styles.footer__menu__text}>Товари</a>
+                        <a href="#" className={styles.footer__menu__text}>Категорії</a>
                     </div>
-                    <div className="footer__subscribe">
-                        <h5 className="footer__subscribe__title"></h5>
-                        <p className="footer__text"></p>
-                        <div className="footer__input-thumb">
-                            <input type="email" name="input" placeholder="Введіть ваш email" />
-                            <button className="footer__input__btn">Підписатися</button>
+                    <div className={styles.footer__subscribe}>
+                        <h5 className={styles.footer__subscribe__title}>Підписатися</h5>
+                        <p className={styles.footer__text}>Приєднуйтесь до нашої розсилки, щоб бути в курсі новин та акцій.</p>
+                        <div className={styles.footer__input__thumb}>
+                            <Input secondClass={styles.footer__input} type="email" name="input" placeholder="Введіть ваш email"/>
+                            <GrayBtn text="Підписатися" secondClass={styles.footer__input__btn}/>
                         </div>
                     </div>
                 </div>
-                <div className="footer__addres-thumb">
-                    <p className="footer__text-rights">© 2025 Зернятко. Всі права захищені.</p>
-                    <div className="footer__btn-thumb">
-                        <button className="footer__btn">
-                            <img src={facebook} alt="facebook" className="footer__img" />
+                <div className={styles.footer__addres__thumb}>
+                    <p className={styles.footer__text__rights}>© 2025 Зернятко. Всі права захищені.</p>
+                    <div className={styles.footer__btn__thumb}>
+                        <button className={styles.footer__btn}>
+                            <img src={facebook} alt="facebook" className={styles.footer__img} />
                         </button>
 
-                        <button className="footer__btn">
-                            <img src={instagram} alt="instagram" className="footer__img" />
+                        <button className={styles.footer__btn}>
+                            <img src={instagram} alt="instagram" className={styles.footer__img} />
                         </button>
 
-                        <button className="footer__btn">
-                            <img src={twitter} alt="x" className="footer__img" />
+                        <button className={styles.footer__btn}>
+                            <img src={twitter} alt="x" className={styles.footer__img} />
                         </button>
 
-                        <button className="footer__btn">
-                            <img src={youtube} alt="youtube" className="footer__img" />
+                        <button className={styles.footer__btn}>
+                            <img src={youtube} alt="youtube" className={styles.footer__img} />
                         </button>
                     </div>
                     
