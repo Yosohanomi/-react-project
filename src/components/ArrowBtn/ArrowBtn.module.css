@@ -1,0 +1,23 @@
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    background-color: #FBC74C;
+    transition: all 0.3s ease-out;
+}
+
+.arrow:hover,
+.arrow:focus {
+    border: 1px solid #644F1E;
+    background-color: #C89F3C;
+}
+
+.arrow__img {
+    width: 16px;
+    height: 16px;
+}

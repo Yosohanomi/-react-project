@@ -1,4 +1,4 @@
-import { Container } from "../../components/Container/Container"
+import { Container } from "../../../components/Container/Container"
 export const filledStar = '../../images/products/star_filled.png'
 export const right = '../../images/arrows/right.png'
 export const left = '../../images/arrows/left.png'

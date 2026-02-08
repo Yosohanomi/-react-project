@@ -1,10 +1,10 @@
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { Hero } from "../../pages/Homepage/Hero/Hero";
-import { PopularProducts } from "../../pages/Homepage/PopularProducts/PopularProducts";
-import { Reasons } from "../../pages/Homepage/Reasons";
-import { PopularCategories } from "../../pages/Homepage/PopularCategories/PopularCategories";
-import { Comments } from "../../pages/Homepage/Comments";
+import { PopularProducts } from "./PopularProducts/PopularProducts";
+import { Reasons } from "./Reasons/Reasons";
+import { PopularCategories } from "./PopularCategories/PopularCategories";
+import { Comments } from "./Comments/Comments";
 
 export const Homepage = () => {
     return <>

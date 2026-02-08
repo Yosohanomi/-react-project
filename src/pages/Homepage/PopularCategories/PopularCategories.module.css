@@ -1,26 +1,15 @@
-.products > div {
+.categories > div {
     position: relative;
 }
 
-.products__thumb {
+.category__thumb {
     display: flex;
     margin-bottom: 40px;
     position: relative;
 }
 
-.products__left {
-    position: absolute;
-    top: 40%;
-    right: 0;
-}
 
-.products__right {
-    position: absolute;
-    top: 40%;
-    left: 0;
-}
-
-.products__title {
+.category__title {
     padding-top: 48px;
 
     font-family: "Nunito Sans", sans-serif;
@@ -31,14 +20,30 @@
     color: #000;
 }
 
-.products__btn {
+.category__btn {
     position: absolute;
     top: 68px;
     right: 2%;
 }
 
-.products__list {
+.category__left {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.category__right {
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.category__list {
     display: flex;
     gap: 32px;
     padding-bottom: 48px;
+}
+
+.pagination {
+    display: none;
 }

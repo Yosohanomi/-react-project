@@ -1,31 +1,31 @@
 import { CategoryCard } from '../../../components/Category/CategoryCard'
 import { Container } from '../../../components/Container/Container'
-export const right = '../../images/arrows/right.png'
-export const left = '../../images/arrows/left.png'
+import { ArrowBtn } from '../../../components/ArrowBtn/ArrowBtn'
+import { GrayBtn } from '../../../components/GrayBtn/GrayBtn'
+import styles from './PopularCategories.module.css'
+import right from '../../../images/arrows/right.png'
+import left from '../../../images/arrows/left.png'
 export const PopularCategories = () => {
     return <>
-        <section className="categories">
+        <section className={styles.categories}>
             <Container>
-                <div className="category__thumb">
-                    <h2 className="category__title"></h2>
-                    <button className="category__btn"></button>
+                <div className={styles.category__thumb}>
+                    <h2 className={styles.category__title}>Популярні категорії</h2>
+                    <GrayBtn text="Всі категорії" secondClass={styles.category__btn}/>
+                    <button className={styles.category__btn}></button>
                 </div>
 
-                <button className="category__btn-arrow right-swipe">
-                    <img src={right} alt="right arrow" className="category__img-right" />
-                </button>
+                <ArrowBtn imgUrl={left} secondClass={styles.category__left}/>
 
-                <ul className="category__list">
+                <ul className={styles.category__list}>
                     <CategoryCard/>
                     <CategoryCard/>
                     <CategoryCard/>
                 </ul>
                 
-                <button className="category__btn-arrow right-swipe">
-                    <img src={left} alt="right arrow" className="category__img-right" />
-                </button>
+                <ArrowBtn imgUrl={right} secondClass={styles.category__right}/>
 
-                <div className="pagination"></div>
+                <div className={styles.pagination}></div>
             </Container>
         </section>
     </>
