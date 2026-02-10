@@ -4,7 +4,7 @@ import { ProductCard } from "../../components/Product/ProductCard";
 import { SidebarProducts } from "./SidebarProducts";
 import { Container } from "../../components/Container/Container";
 
-export const CategoriesList = () => {
+export const ProductsList = () => {
     return <>
         <Header/>
         <main>

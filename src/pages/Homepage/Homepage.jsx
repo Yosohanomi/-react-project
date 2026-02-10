@@ -6,6 +6,7 @@ import { Reasons } from "./Reasons/Reasons";
 import { PopularCategories } from "./PopularCategories/PopularCategories";
 import { Comments } from "./Comments/Comments";
 import { CategoriesList } from "../CategoriesList/CategoriesList";
+import {ProductsList} from "../ProductsList/ProductsList"
 
 export const Homepage = () => {
     return <>
@@ -17,6 +18,7 @@ export const Homepage = () => {
             <PopularCategories/>
             <Comments/>
             <CategoriesList/>
+            <ProductsList/>
         </main>
         <Footer/>
     </>
