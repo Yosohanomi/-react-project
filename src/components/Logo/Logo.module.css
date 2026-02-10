@@ -5,6 +5,7 @@
     line-height: 150%;
     text-align: center;
     color: #000;
+    z-index: 10;
 }
 .logo__image {
     width: 16px;

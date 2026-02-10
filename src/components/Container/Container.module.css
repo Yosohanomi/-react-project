@@ -1,7 +1,31 @@
 .container {
-    width: 1378px;
-    padding: 0px 32px;
+    width: 347px;
+    padding: 0px 8px;
     margin: 0 auto;
     outline: 1px solid red;
     font-family: 'Inter', sans-serif;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        
+
+        width: 664px;
+        padding: 0px 16px;
+        margin: 0 auto;
+        outline: 1px solid red;
+        font-family: 'Inter', sans-serif;
+    }
+    
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 1378px;
+        padding: 0px 32px;
+        margin: 0 auto;
+        outline: 1px solid red;
+        font-family: 'Inter', sans-serif;
+    }
+    
 }
