@@ -74,11 +74,9 @@
         justify-content: center;
         align-items: center;
         padding-bottom: 48px;
-    }
-
-    .products__list {
         gap: 32px;
     }
+
 
     .products__btn {
         position: absolute;

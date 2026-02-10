@@ -12,15 +12,14 @@ export const PopularCategories = () => {
                 <div className={styles.category__thumb}>
                     <h2 className={styles.category__title}>Популярні категорії</h2>
                     <GrayBtn text="Всі категорії" secondClass={styles.category__btn}/>
-                    <button className={styles.category__btn}></button>
                 </div>
 
                 <ArrowBtn imgUrl={left} secondClass={styles.category__left}/>
 
                 <ul className={styles.category__list}>
                     <CategoryCard/>
-                    <CategoryCard/>
-                    <CategoryCard/>
+                    <CategoryCard isHidden={styles.isHidden}/>
+                    <CategoryCard isHidden={styles.isHidden__Desktop}/>
                 </ul>
                 
                 <ArrowBtn imgUrl={right} secondClass={styles.category__right}/>
