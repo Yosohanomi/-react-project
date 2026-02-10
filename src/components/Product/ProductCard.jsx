@@ -5,9 +5,9 @@ import { Stars } from '../Stars/Stars'
 import { GrayBtn } from '../../components/GrayBtn/GrayBtn'
 import productCoffeeTest from '../../images/products/product-coffee.png'
 
-export const ProductCard = () => {
+export const ProductCard = ({isHidden}) => {
     return <>
-                <li className={styles.products__item}>
+                <li className={`${styles.products__item} ${isHidden}`}>
                     <img src={productCoffeeTest} alt="popular coffee" className={styles.products__img} />
                     <Stars star={filledStar} star2={filledStar} star3={halfStar}/>
                     <h3 className={styles.products__item__title}>Еспресо Класік</h3>

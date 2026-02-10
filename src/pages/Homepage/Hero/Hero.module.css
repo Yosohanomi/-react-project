@@ -73,7 +73,8 @@
     }
     
     .hero__img {
-    
+        width: 612px;
+        height: 467px;
     }
 }
 
@@ -84,6 +85,7 @@
     .hero__thumb {
         display: flex;
         justify-content: center;
+        flex-direction: row;
         align-items: center;
     }
     
@@ -114,6 +116,7 @@
     }
     
     .hero__img {
-    
+        width: 806px;
+        height: 612px;
     }
 }

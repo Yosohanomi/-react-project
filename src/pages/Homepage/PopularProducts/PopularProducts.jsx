@@ -16,9 +16,9 @@ export const PopularProducts = () => {
                 <ArrowBtn imgUrl={left} secondClass={styles.products__left}/>
                 <ul className={styles.products__list}>
                     <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
-                    <ProductCard/>
+                    <ProductCard isHidden={styles.isHidden}/>
+                    <ProductCard isHidden={styles.isHidden__Desktop}/>
+                    <ProductCard isHidden={styles.isHidden__Desktop}/>
                 </ul>
                 <ArrowBtn imgUrl={right} secondClass={styles.products__right}/>
                 <div className="pagination"></div>

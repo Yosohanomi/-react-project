@@ -5,16 +5,17 @@
 .reasons__title {
     font-family: "Nunito Sans", sans-serif;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 36px;
     line-height: 120%;
     letter-spacing: -0.01em;
     color: #000;
     margin-bottom: 40px;
-    padding-top: 48px;
+    padding-top: 32px;
 }
 
 .reasons__list {
     display: flex;
+    flex-direction: column;
     gap: 32px;
     padding-bottom: 48px;
 
@@ -24,7 +25,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 416px;
+    /* width: 416px; */
 }
 
 .reasons__img {
@@ -43,7 +44,92 @@
 
 .reasons__text {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: #000;
 }
+
+@media screen and (min-width:768px) {
+    .reasons {
+        text-align: left;
+    }
+    
+    .reasons__title {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #000;
+        margin-bottom: 40px;
+        padding-top: 32px;
+    }
+    
+    .reasons__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+        padding-bottom: 48px;
+    
+    }
+
+    .reasons__item:last-child {
+        width: 704px;
+    }
+    
+    .reasons__item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 300px;
+    }
+    
+    .reasons__img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .reasons__item__title {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: -0.01em;
+        color: #000;
+    }
+    
+    .reasons__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #000;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    
+    .reasons__title {
+        font-size: 48px;
+        padding-top: 48px;
+    }
+    
+    .reasons__list {
+        flex-wrap: nowrap;
+    
+    }
+    
+    .reasons__item {
+        width: 416px;
+    }
+
+    .reasons__item:last-child {
+        width: 416px;
+    }
+    
+    
+    .reasons__text {
+        font-size: 16px;
+    }
+}
+
