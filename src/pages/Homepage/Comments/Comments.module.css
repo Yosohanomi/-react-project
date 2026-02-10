@@ -50,9 +50,18 @@
     right: 57px;
 }
 
+.comment__gap {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
 @media screen and (min-width:768px) {
     .isHidden {
         display: flex;
+        gap: 32px;
+        flex-direction: column;
+        align-items: start;
     }
     
 }
@@ -61,6 +70,9 @@
     
     .isHidden__Desktop {
         display: flex;
+        gap: 32px;
+        flex-direction: column;
+        align-items: start;
     }
     
     .comments__title {

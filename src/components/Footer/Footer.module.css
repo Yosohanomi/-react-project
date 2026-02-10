@@ -31,13 +31,13 @@
 }
 .footer__menu__title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: #000;
 }
 .footer__menu__text {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 150%;
     color: #000;
 }
@@ -48,14 +48,14 @@
 }
 .footer__subscribe__title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: #000;
 
 }
 .footer__text {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 150%;
     color: #000;
 }
@@ -97,7 +97,7 @@
 
 .footer__text__rights {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 150%;
     color: #000;
 }
@@ -117,67 +117,24 @@
 }
 
 @media screen and (min-width: 768px) {
-    .footer {
-        background-color: #fbc74c;
-        text-align: left;
-    }
     .footer > div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 48px;
         gap: 40px;
     }
     .footer__thumb {
-        display: flex;
         flex-direction: row;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        padding-bottom: 40px;
-        
+        align-items: start;
     }
     .footer__menu {
-        display: flex;
+        align-items: flex-start;
         flex-direction: column;
-        gap: 24px;
-        width: 372px;
-        margin-right: 128px;
-        margin-left: 328px;
-    }
-    .footer__menu__title {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 150%;
-        color: #000;
-    }
-    .footer__menu__text {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 150%;
-        color: #000;
-    }
-    .footer__subscribe {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-    .footer__subscribe__title {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 150%;
-        color: #000;
-    
-    }
-    .footer__text {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: #000;
-    }
-    .footer__input__thumb {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
+        width: 93px;
+        margin-right: 77px;
+        margin-left: 40px;
+        margin-bottom: 0px;
     }
     
     .footer__input {
@@ -190,22 +147,16 @@
     .footer__addres__thumb {
         display: flex;
         align-self: start;
+        justify-content: start;
         flex-direction: row;
         width: 100%;
-        padding-bottom: 83px;
+        margin-top: 0px;
         position: relative;
     
     }
     
-    .footer__text__rights {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 150%;
-        color: #000;
-    }
     
     .footer__btn__thumb {
-        display: flex;
         gap: 14px;
         position: absolute;
         top: 0;
@@ -213,10 +164,6 @@
     }
     .footer__btn {
     
-    }
-    .footer__img {
-        width: 24px;
-        height: 24px;
     }
 }
 
@@ -231,17 +178,17 @@
         justify-content: center;
         align-items: center;
         padding-top: 48px;
-        gap: 40px;
     }
     .footer__thumb {
         display: flex;
         flex-direction: row;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
         padding-bottom: 40px;
-        
+        align-items: normal;
     }
     .footer__menu {
         display: flex;
+        align-items: normal;
         flex-direction: column;
         gap: 24px;
         width: 372px;
@@ -255,72 +202,20 @@
         color: #000;
     }
     .footer__menu__text {
-        font-weight: 400;
         font-size: 14px;
-        line-height: 150%;
-        color: #000;
     }
-    .footer__subscribe {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+
     .footer__subscribe__title {
-        font-weight: 600;
         font-size: 16px;
-        line-height: 150%;
-        color: #000;
     
     }
     .footer__text {
-        font-weight: 400;
         font-size: 16px;
-        line-height: 150%;
-        color: #000;
-    }
-    .footer__input__thumb {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
     }
     
-    .footer__input {
-        width: 260px;
-    }
-    .footer__input__btn {
-    
-    }
-    
-    .footer__addres__thumb {
-        display: flex;
-        align-self: start;
-        flex-direction: row;
-        width: 100%;
-        padding-bottom: 83px;
-        position: relative;
-    
-    }
     
     .footer__text__rights {
-        font-weight: 400;
         font-size: 14px;
-        line-height: 150%;
-        color: #000;
-    }
-    
-    .footer__btn__thumb {
-        display: flex;
-        gap: 14px;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-    .footer__btn {
-    
-    }
-    .footer__img {
-        width: 24px;
-        height: 24px;
     }
 }
 

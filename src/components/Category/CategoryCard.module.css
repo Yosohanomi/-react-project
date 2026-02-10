@@ -6,6 +6,8 @@
 }
 
 .category__img {
+    width: 335px;
+    height: 223px;
     margin-bottom: 16px;
 }
 
@@ -21,4 +23,20 @@
     font-size: 16px;
     line-height: 150%;
     color: #000;
+}
+
+/* @media screen and (min-width: 768px) {
+    .category__img {
+        margin-bottom: 16px;
+    }
+    
+} */
+
+@media screen and (min-width: 1440px) {
+    .category__img {
+        margin-bottom: 16px;
+        width: 416px;
+    height: 277px;
+    }
+    
 }
