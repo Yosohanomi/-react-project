@@ -1,5 +1,4 @@
 .products__item {
-    width: 304px;
     display: flex;
     flex-direction: column;
     justify-content: start;

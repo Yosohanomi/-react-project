@@ -1,0 +1,322 @@
+.sidebar__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.sidebarNav {
+    display: none;
+}
+
+.mobile__sidebarNav__list {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 32px;
+}
+
+.mobile__sidebarNav__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.mobile__sidebarNav__link:hover,
+.mobile__sidebarNav__link:focus {
+    font-weight: 600;
+}
+
+.mobile__sidebarBrands {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mobile__sidebarBrands__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+    margin: 20px 0;
+    margin-right: 20%;
+}
+
+.mobile__sidebarBrands__btn {
+    background-color: transparent;
+}
+
+.mobile__sidebarBrands__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 32px;
+}
+
+.mobile__sidebarBrands__item {
+    display: flex;
+    gap: 8px;
+}
+
+.mobile__sidebarPrice {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mobile__sidebarPrice__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+    margin: 20px 0;
+    margin-right: 50%;
+}
+
+.mobile__sidebarPrice__btn {
+    background-color: transparent;
+}
+
+.price__input {
+    width: 264px;
+}
+
+.price__input[type='range'] {
+    accent-color: #000;
+  }
+
+.price__text {
+    display: flex;
+    gap: 400%;
+}
+
+.input__thumb {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 10px 0;
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+.filters__input {
+    margin-right: 8px;
+    cursor: pointer;
+    z-index: 60;
+  }
+  
+  .filters__label {
+    cursor: pointer;
+    text-align: left;
+    margin-right: 65%;
+    font-weight: 500;
+    z-index: 60;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    color: #000;
+  }
+  
+  .mobile__filters {
+    display: none;
+    height: 444px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    transition: 0.3s ease;
+    padding: 30px 20px;
+    overflow-y: auto;
+    z-index: 20;
+  }
+
+  .mobile__filters::-webkit-scrollbar {
+    width: 8px;
+    height: 2px;
+  }
+  
+  .mobile__filters::-webkit-scrollbar-track {
+    background: #FBC74C;
+    border-radius: 8px;
+  }
+  
+  .mobile__filters::-webkit-scrollbar-thumb {
+    background-color: #644F1E;
+    border-radius: 8px;
+  }
+
+  .filters__input:checked ~ .mobile__filters {
+    right: 0;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #fef3db;
+  }
+
+.sidebarFilter__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    color: #000;
+    
+}
+.sidebarFilter__btn {
+    background-color: transparent;
+}
+.sidebarFilter__text {
+
+    text-align: left;
+}
+
+
+@media screen and (min-width: 768px) {
+    .sidebar {
+        min-width: 244px;
+        text-align: left;
+    }
+    .sidebar__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+    
+    .sidebarNav {
+        display:block;
+    }
+    
+    .mobile__filters {
+        display: none;
+    }
+    
+    .price__input {
+        width: 264px;
+    }
+    
+    .price__text {
+        display: flex;
+        gap: 400%;
+    }
+    
+    .input__thumb {
+        display: none;
+    }
+    
+    
+    .sidebarNav__list {
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding-bottom: 32px;
+    }
+    .sidebarNav__item {
+        
+    }
+    .sidebarNav__link {
+        font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+    transition: all 0.2s ease-in-out;
+    }
+    
+    .sidebarNav__link:hover,
+    .sidebarNav__link:focus {
+        font-weight: 600;
+    }
+    .sidebarBrands {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .sidebarBrands__title {
+        font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+    margin: 20px 0;
+    margin-right: 5%;
+    }
+    .sidebarBrands__btn {
+        background-color: transparent;
+    }
+    .sidebarBrands__list {
+        display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 32px;
+    }
+    .sidebarBrands__item {
+        display: flex;
+    gap: 8px;
+    }
+    
+    .sidebarPrice {
+        display: flex;
+    flex-wrap: wrap;
+    }
+    .sidebarPrice__title {
+        font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+    margin: 20px 0;
+    margin-right: 50%;
+    }
+    .sidebarPrice__btn {
+        background-color: transparent;
+    }
+
+    .sidebarPrice__input {
+        width: 264px;
+        margin-bottom: 24px;
+    }
+
+    .sidebar__price {
+        display: flex;
+        flex-direction: column;
+    gap: 400%;
+    }
+
+    .sidebar__priceText {
+        display: flex;
+        gap: 170px;
+    }
+
+    .sidebarPrice__input[type='range'] {
+        accent-color: #000;
+      }
+
+    
+}
+
+@media screen and (min-width: 1440px) {
+    .sidebarNav__link {
+        position: relative;
+        padding-bottom: 5px;
+    }
+    .sidebarNav__link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s ease-out;
+    }
+    .sidebarNav__link:hover::after,
+    .sidebarNav__link:focus::after {
+        transform: scaleX(1);
+    }
+}
+
