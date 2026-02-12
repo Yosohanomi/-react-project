@@ -7,6 +7,7 @@ import { PopularCategories } from "./PopularCategories/PopularCategories";
 import { Comments } from "./Comments/Comments";
 import { CategoriesList } from "../CategoriesList/CategoriesList";
 import {ProductsList} from "../ProductsList/ProductsList"
+import { ProductInfo } from "../ProductInfo/ProductInfo";
 
 export const Homepage = () => {
     return <>
@@ -19,6 +20,7 @@ export const Homepage = () => {
             <Comments/>
             <CategoriesList/>
             <ProductsList/>
+            <ProductInfo/>
         </main>
         <Footer/>
     </>
