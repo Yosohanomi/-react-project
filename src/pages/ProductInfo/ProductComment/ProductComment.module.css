@@ -1,0 +1,112 @@
+.product__comments {
+    text-align: left;
+}
+
+.product__comments > div {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.product__comments__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.product__btn {
+    width: 140px;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.comment__gap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.isHidden {
+    display: none;
+}
+
+.isHidden__Desktop {
+    display: none;
+}
+.pagination__thumb {
+    position: relative;
+    padding-bottom: 74px; 
+}
+
+.comments__left {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.comments__right {
+    position: absolute;
+    top: 0;
+    right: 57px;
+}
+
+@media screen and (min-width:768px) {
+    
+    .comments__thumb {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .product__comments__title {
+        margin-bottom: 0;
+    }
+    
+    .product__list {
+        display: flex;
+        gap: 32px;
+    }
+    
+    
+    .isHidden {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+@media screen and (min-width:1440px) {
+    .product__comments__title {
+        font-size: 48px;
+    }
+    
+    .product__btn {
+        width: 156px;
+        font-size: 16px;
+        height: 36px;
+    }
+    
+    .comment__gap {
+        width: 416px;
+    }
+    
+    .isHidden {
+        width: 416px;
+    }
+    .isHidden__Desktop {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 416px;
+    }
+}

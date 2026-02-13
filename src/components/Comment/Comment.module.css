@@ -1,7 +1,7 @@
 .comments__text {
     font-family: "Nunito Sans", sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 140%;
     letter-spacing: -0.01em;
     color: #000;
@@ -9,10 +9,15 @@
 
 .comments__author {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: #000;
 }
+/* .comments__item {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+} */
 
 
 .comments__product {
@@ -22,4 +27,13 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #000;
+}
+
+@media screen and (min-width: 1440px){
+    .comments__text {
+        font-size: 20px;
+    }
+    .comments__author {
+        font-size: 16px;
+    }
 }
