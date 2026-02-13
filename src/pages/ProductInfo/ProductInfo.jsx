@@ -15,7 +15,7 @@ import productImg from "../../images/productInfo/product.png";
 export const ProductInfo = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         <section className={styles.product}>
           <Container>
@@ -106,7 +106,7 @@ export const ProductInfo = () => {
 
         <ProductComment />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

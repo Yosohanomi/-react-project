@@ -1,0 +1,39 @@
+.order__item {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.isHidden {
+    display: none;
+}
+
+.order__date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+}
+
+.order__thick {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000;
+}
+
+.order__thin {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+}
+
+@media screen and (min-width: 768px){
+    .isHidden {
+        display: block;
+    }
+    .order__thumb {
+        width: 250px;
+    }
+}

@@ -8,7 +8,7 @@ import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 
 export const ProductsList = () => {
     return <>
-        <Header/>
+        {/* <Header/> */}
         <main>
             <section className={styles.products}>
                 <Container>
@@ -34,6 +34,6 @@ export const ProductsList = () => {
                 </Container>
             </section>
         </main>
-        <Footer/>
+        {/* <Footer/> */}
     </>
 };

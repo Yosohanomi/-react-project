@@ -4,13 +4,13 @@ import { Form } from "../../components/Form/Form";
 import { Cart } from "../../components/Cart/Cart";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
-import product from "../../images/Cart/cartProduct.png";
+import product from "../../images/Cart/Placeholder Image.png";
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 
 export const Order = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         <section className={styles.order}>
           <Container>
@@ -85,7 +85,7 @@ export const Order = () => {
           </Container>
         </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

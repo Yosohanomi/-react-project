@@ -7,7 +7,7 @@ import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 
 export const CategoriesList = () => {
     return <>
-        <Header/>
+        {/* <Header/> */}
         <main>
             <section className={styles.categories}>
                 <Container>
@@ -24,6 +24,6 @@ export const CategoriesList = () => {
                 </Container>
             </section>
         </main>
-        <Footer/>
+        {/* <Footer/> */}
     </>
 };

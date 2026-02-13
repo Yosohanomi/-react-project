@@ -1,0 +1,153 @@
+.cabinet {}
+
+.cabinet__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+    padding-top: 64px;
+    margin-bottom: 48px;
+}
+
+.big__thumb {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.first__element {}
+
+.thumb__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+}
+
+.second__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.first__list {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.second__element {}
+
+.cabinet__btn {
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.cabinet__leave {
+    width: 140px;
+    height: 33px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+    margin-top: 54px;
+    margin-bottom: 54px;
+}
+
+@media screen and (min-width:768px) {
+    .first__list {
+        margin-top: 32px;
+    }
+
+    .cabinet__btn {
+        width: 131px;
+        height: 33px;
+        font-weight: 500;
+    }
+
+    .cabinet__leave {
+        width: 140px;
+        height: 33px;
+        margin-top: 48px;
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (min-width:1440px) {
+
+    .cabinet__title {
+        font-size: 48px;
+        padding-top: 112px;
+        margin-bottom: 48px;
+    }
+
+    .big__thumb {
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    .first__element {}
+
+    .thumb__title {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        text-align: center;
+        color: #000;
+    }
+
+    .second__title {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%;
+        letter-spacing: -0.01em;
+        text-align: center;
+        color: #000;
+        margin-bottom: 16px;
+    }
+
+    .first__list {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .second__element {}
+
+    .cabinet__btn {
+        width: 146px;
+        height: 36px;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+
+    .cabinet__leave {
+        width: 156px;
+        height: 36px;
+        font-size: 16px;
+        margin-top: 48px;
+        margin-bottom: 50px;
+    }
+}
