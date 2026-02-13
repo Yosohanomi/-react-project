@@ -1,0 +1,154 @@
+.order {}
+
+.order__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+    padding-top: 64px;
+    margin-bottom: 48px;
+}
+
+.first__element {}
+
+.first__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 16px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.thumb__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.cash {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.cash__last {
+    margin-bottom: 28px;
+}
+
+.cash__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #000;
+}
+
+.cash__price {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #000;
+}
+
+.summ {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.second__element {
+    padding-bottom: 64px;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+}
+
+.comment__textarea {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    margin-top: 24px;
+}
+.second__comment {
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 12px;
+    width: 100%;
+    height: 180px;
+    resize: none;
+    
+}
+
+.second__comment:hover,
+.second__comment:focus {
+    outline: none;
+}
+
+.order__btn {
+    font-weight: 500;
+    font-size: 14px;
+    height: 33px;
+    margin-top: 24px;
+}
+
+
+@media screen and (min-width:1440px) {
+    .order {}
+
+    .order__title {
+        font-size: 48px;
+    }
+
+    .big__thumb {
+        display: flex;
+        gap: 32px;
+        padding-bottom: 64px;
+    }
+
+    .cash {
+        margin-bottom: 0;
+    }
+
+    .cash__last {
+        margin-bottom: 28px;
+    }
+
+    .cash__text {
+        font-size: 14px;
+    }
+
+    .cash__price {
+        font-size: 14px;
+    }
+
+    .summ {
+        font-size: 18px;
+    }
+
+    .second__element {
+        padding-bottom: 0;
+    }
+
+    .label {
+        font-size: 16px;
+    }
+
+    .order__btn {
+        font-size: 16px;
+        margin-top: 30px;
+    }
+}

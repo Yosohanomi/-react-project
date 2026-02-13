@@ -8,6 +8,7 @@ import { Comments } from "./Comments/Comments";
 import { CategoriesList } from "../CategoriesList/CategoriesList";
 import {ProductsList} from "../ProductsList/ProductsList"
 import { ProductInfo } from "../ProductInfo/ProductInfo";
+import { Order } from "../Order/Order";
 
 export const Homepage = () => {
     return <>
@@ -21,6 +22,7 @@ export const Homepage = () => {
             <CategoriesList/>
             <ProductsList/>
             <ProductInfo/>
+            <Order/>
         </main>
         <Footer/>
     </>
