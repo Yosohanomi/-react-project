@@ -1,0 +1,119 @@
+.register {
+    background-color: #fff;
+    position: relative;
+}
+
+.register > div {
+    padding: 132px 15px;
+}
+
+.pos__logo {
+    position: absolute;
+    top: 23px;
+    left: 18px;
+}
+
+.register__buttons {
+    display: flex;
+}
+
+.register__btn {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+    background-color: transparent;
+    width: 100%;
+    padding: 12px 24px;
+    transition: all 0.3ms ease-in-out;
+}
+
+.register__btn:hover,
+.register__btn:focus {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.register__title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #000;
+    margin: 32px 0;
+}
+
+.register__thumb {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.register__login {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.rights {
+    height: 72px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    color: #000;
+}
+
+@media screen and (min-width:768px) {
+    .register__buttons {
+        justify-content: center;
+        align-items: center;
+    }
+    .register > div {
+        width: 480px;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .register {
+        background-color: #fff;
+        position: relative;
+    }
+    
+    .pos__logo {
+        position: absolute;
+        top: 23px;
+        left: 18px;
+    }
+    
+    .register__buttons {
+        display: flex;
+    }
+    
+    .register__btn {
+        font-weight: 500;
+        font-size: 16px;
+    }
+    
+    .register__title {
+        font-size: 48px;
+    }
+    
+    .register__thumb {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .register__login {
+        font-size: 16px;
+    }
+    
+    .rights {
+        font-size: 14px;
+    }
+}

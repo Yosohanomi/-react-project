@@ -10,6 +10,8 @@ import {ProductsList} from "../ProductsList/ProductsList"
 import { ProductInfo } from "../ProductInfo/ProductInfo";
 import { Order } from "../Order/Order";
 import { Cabinet } from "../Cabinet/Cabinet"
+import { Register } from "../Register/Register";
+import { Login } from "../Login/Login";
 
 export const Homepage = () => {
     return <>
@@ -25,6 +27,8 @@ export const Homepage = () => {
             <ProductInfo/>
             <Order/>
             <Cabinet/>
+            <Register/>
+            <Login/>
         </main>
         <Footer/>
     </>
