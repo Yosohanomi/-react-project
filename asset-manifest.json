@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/yosohanomi.github.io/-react-project/static/css/main.3e125ea7.css",
+    "main.js": "/yosohanomi.github.io/-react-project/static/js/main.b9e44fe4.js",
+    "static/media/product.png": "/yosohanomi.github.io/-react-project/static/media/product.dafa48439b48f377ca1b.png",
+    "static/media/hero_image.png": "/yosohanomi.github.io/-react-project/static/media/hero_image.0aba005f4d56a751c464.png",
+    "static/media/melena-coffee.png": "/yosohanomi.github.io/-react-project/static/media/melena-coffee.816b7f107e75c7ba52b9.png",
+    "static/media/product-coffee.png": "/yosohanomi.github.io/-react-project/static/media/product-coffee.0b1841b279b1fce82a85.png",
+    "static/media/Placeholder Image.png": "/yosohanomi.github.io/-react-project/static/media/Placeholder Image.32d017fe6e935551fe1d.png",
+    "index.html": "/yosohanomi.github.io/-react-project/index.html",
+    "main.3e125ea7.css.map": "/yosohanomi.github.io/-react-project/static/css/main.3e125ea7.css.map",
+    "main.b9e44fe4.js.map": "/yosohanomi.github.io/-react-project/static/js/main.b9e44fe4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e125ea7.css",
+    "static/js/main.b9e44fe4.js"
+  ]
+}
