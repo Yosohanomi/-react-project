@@ -4,6 +4,7 @@ import { GrayBtn } from '../../../components/GrayBtn/GrayBtn';
 import right from '../../../images/arrows/right.png';
 import styles from './PopularProducts.module.css'
 import left from '../../../images/arrows/left.png';
+import { ProductList } from '../../../components/ProductList/ProductList';
 import { ArrowBtn } from '../../../components/ArrowBtn/ArrowBtn';
 export const PopularProducts = () => {
     return <>
@@ -14,15 +15,17 @@ export const PopularProducts = () => {
                     <GrayBtn text='Всі товари' secondClass={styles.products__btn}/>
                 </div>
                 <ArrowBtn imgUrl={left} secondClass={styles.products__left}/>
-                <ul className={styles.products__list}>
-                    <ProductCard/>
-                    <ProductCard isHidden={styles.isHidden}/>
-                    <ProductCard isHidden={styles.isHidden__Desktop}/>
-                    <ProductCard isHidden={styles.isHidden__Desktop}/>
-                </ul>
+                <ProductList/>
                 <ArrowBtn imgUrl={right} secondClass={styles.products__right}/>
                 <div className="pagination"></div>
         </Container>
         </section>
     </>
 }
+
+// <ul className={styles.products__list}>
+//                     {/* <ProductCard/>
+//                     <ProductCard isHidden={styles.isHidden}/>
+//                     <ProductCard isHidden={styles.isHidden__Desktop}/>
+//                     <ProductCard isHidden={styles.isHidden__Desktop}/> */}
+//                 </ul>

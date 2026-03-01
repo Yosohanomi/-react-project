@@ -7,14 +7,13 @@ import shoppingCart from '../../images/header-images/shopping_cart.png';
 
 
 export const Header = () => {
-    console.log(styles);
     return <>
         <header className={styles.header}>
         <Container>
         <div className={styles.header__inner}>
         <Logo/>
                 <input type="checkbox" id="toggle" className={styles.burger__input}/>
-                <label for="toggle" className={styles.burger__label}>
+                <label htmlFor="toggle" className={styles.burger__label}>
                     <span className={styles.toggle__btn}></span>
                 </label>
                 <nav className={styles.header__nav}>
@@ -25,8 +24,8 @@ export const Header = () => {
                     </ul>
                 </nav>
                 {/* MOBILE MENU */}
-                <div class={styles.mobile__menu}>
-                                    <nav class={styles.mobile__nav}>
+                <div className={styles.mobile__menu}>
+                                    <nav className={styles.mobile__nav}>
                                     <ul className={styles.mobile__list}>
                         <li className={styles.mobile__item}><a href="#" className={styles.mobile__link}>Головна</a></li>
                         <li className={styles.mobile__item}><a href="#" className={styles.mobile__link}>Товари</a></li>
