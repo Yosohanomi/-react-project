@@ -5,13 +5,42 @@ import right from '../../../images/arrows/right.png'
 import left from '../../../images/arrows/left.png'
 import {Comment} from '../../../components/Comment/Comment'
 import { Container } from '../../../components/Container/Container';
+import { Modal } from '../../../components/Modal/Modal';
+import { useState } from "react"
+import { useRef } from "react"
+import { useEffect } from "react"
 export const ProductComment = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    const modalBtn = useRef(null)
+    useEffect(()=> {
+        return ()=> {
+            window.removeEventListener("keydown", (e)=>{
+                if (e.key === "ESCAPE") {
+                    setIsOpen(false)
+                }
+            })
+        }
+    }, [isOpen])
+    const closeModal =()=> {
+        setIsOpen(false) 
+    }
+    const openModal =()=> {
+        setIsOpen(true)
+        window.addEventListener("keydown", (e)=>{
+            if (e.key === "ESCAPE") {
+                setIsOpen(false)
+            }
+        })
+        console.log(modalBtn.current);
+    }
+    
+    
     return <>
         <section className={styles.product__comments}>
             <Container>
                 <div className={styles.comments__thumb}>
                     <h2 className={styles.product__comments__title}>Відгуки клієнтів</h2>
-                    <YellowBtn text='Залишити відгук' secondClass={styles.product__btn}/>
+                    <YellowBtn btnRef={modalBtn} openModal={openModal} text='Залишити відгук' secondClass={styles.product__btn}/>
                 </div>
                         <ul className={styles.product__list}>
                             <Comment isHidden={styles.comment__gap} author="Анна Коваленко" text="Дуже задоволена покупкою! Кавоварка компактна, зручна й стильна. Кава виходить насичена, з кремовою пінкою — майже як у кав’ярні."/>
@@ -23,7 +52,11 @@ export const ProductComment = () => {
                              <ArrowBtn imgUrl={right} secondClass={styles.comments__right}/>
                         </div>
             </Container>
-                        
+            {isOpen && (
+            <Modal closeModal={closeModal}/> 
+            )}            
         </section>
+        
+        
     </>
 }
