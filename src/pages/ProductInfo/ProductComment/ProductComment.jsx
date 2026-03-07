@@ -12,26 +12,48 @@ import { useEffect } from "react"
 export const ProductComment = () => {
     const [isOpen, setIsOpen] = useState(false)
     const modalBtn = useRef(null)
+    const buttonStyle = {
+        backgroundColor:'black',
+        color: 'white',
+        border: '1px solid white',
+      };
+
+      const buttonStyle1 = {
+        backgroundColor:'white',
+        color: 'black',
+        border: '1px solid black',
+        cursor: 'pointer',
+      };
     useEffect(()=> {
         return ()=> {
             window.removeEventListener("keydown", (e)=>{
-                if (e.key === "ESCAPE") {
+                if (e.key === "Escape") {
                     setIsOpen(false)
+                    modalBtn.current.style.backgroundColor = buttonStyle1.backgroundColor;
+                    modalBtn.current.style.color = buttonStyle1.color;
+                    modalBtn.current.style.border = buttonStyle1.border;
                 }
             })
         }
     }, [isOpen])
+
+    
     const closeModal =()=> {
         setIsOpen(false) 
+        modalBtn.current.style.backgroundColor = buttonStyle1.backgroundColor;
+        modalBtn.current.style.color = buttonStyle1.color;
+        modalBtn.current.style.border = buttonStyle1.border;
     }
     const openModal =()=> {
         setIsOpen(true)
         window.addEventListener("keydown", (e)=>{
-            if (e.key === "ESCAPE") {
+            if (e.key === "Escape") {
                 setIsOpen(false)
             }
         })
-        console.log(modalBtn.current);
+        modalBtn.current.style.backgroundColor = buttonStyle.backgroundColor;
+        modalBtn.current.style.color = buttonStyle.color;
+        modalBtn.current.style.border = buttonStyle.border;
     }
     
     
