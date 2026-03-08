@@ -3,13 +3,16 @@ import { InputForm } from "../../components/InputForm/InputForm";
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { Container } from "../../components/Container/Container";
 import { Logo } from "../../components/Logo/Logo";
+import { AuthProvider } from "../../context/AuthContext/AuthContext";
 
 export const Login = () => {
   return (
     <div className={styles.login}>
+      
       <Logo secondClass={styles.pos__logo} />
 
       <Container>
+        
         <div className={styles.login__buttons}>
           <button className={styles.login__btn}>Реєстрація</button>
           <button className={styles.login__btn}>Вхід</button>
