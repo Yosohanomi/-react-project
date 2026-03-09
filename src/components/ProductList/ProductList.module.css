@@ -21,7 +21,7 @@
 
 @media screen  and (min-width:1440px){
     .products__item {
-        flex-basis: calc((100% - 64px) / 3);
-        width: 303px;
+        flex-basis: calc((100% - 100px) / 4);
+        width: 304px;
     }
 }

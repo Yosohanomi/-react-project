@@ -12,6 +12,10 @@
 
 .products__img {
     margin-bottom: 16px;
+    border-radius: 10px;
+        object-fit: cover;
+        /* width: 335px; */
+        height: 251px;
 }
 
 .products__item__title {
@@ -39,4 +43,22 @@
 
 .products__item__btn {
 
+}
+
+@media screen and (min-width: 768px) {
+    .products__img {
+        margin-bottom: 16px;
+        /* width: 336px; */
+        height: 252px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .products__img {
+        margin-bottom: 16px;
+        /* width: 304px; */
+        height: 228px;
+        
+    }
+    
 }

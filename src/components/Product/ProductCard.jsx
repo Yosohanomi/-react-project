@@ -3,7 +3,6 @@ import halfStar from "../../images/products/star_half.png";
 import styles from "./Product.module.css";
 import { Stars } from "../Stars/Stars";
 import { GrayBtn } from "../../components/GrayBtn/GrayBtn";
-import productCoffeeTest from "../../images/products/product-coffee.png";
 
 
 
@@ -13,7 +12,7 @@ export const ProductCard = ({ isHidden, product }) => {
   const {image, name, price, _id, info} = product;
   return (
     <>
-        <li className={`${styles.products__item}`}>
+        <li className={`${styles.products__item} ${isHidden}`}>
           <img
             src={image}
             alt="popular coffee"
