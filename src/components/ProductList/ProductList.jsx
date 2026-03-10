@@ -12,7 +12,6 @@ export const ProductList = () => {
       {products?.map((product) => {
         return (
           <ProductCard 
-            key={product.id}
             isHidden={styles.products__item} 
             product={product} 
           />

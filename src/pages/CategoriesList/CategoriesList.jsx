@@ -15,7 +15,7 @@ export const CategoriesList = () => {
                     <ul className={styles.categories__list}>
                         <CategoryCard secondClass={styles.categories__item}/>
                         <CategoryCard secondClass={styles.categories__item}/>
-                        <CategoryCard secondClass={styles.categories__item}/>
+                        <CategoryCard s                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     econdClass={styles.categories__item}/>
                         <CategoryCard secondClass={styles.categories__item}/>
                         <CategoryCard isHidden={styles.isHidden} secondClass={styles.categories__item}/>
                         <CategoryCard isHidden={styles.isHidden} secondClass={styles.categories__item}/>

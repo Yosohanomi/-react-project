@@ -6,26 +6,32 @@ import styles from './PopularProducts.module.css'
 import left from '../../../images/arrows/left.png';
 import { ProductList } from '../../../components/ProductList/ProductList';
 import { ArrowBtn } from '../../../components/ArrowBtn/ArrowBtn';
+import { useContext } from "react";
+import { ProductContext } from '../../../context/ProductsContext/ProductsContext';
+
 export const PopularProducts = () => {
+    const { page, setPage } = useContext(ProductContext);
+
+    const onRight = () => {
+        setPage(prevPage => prevPage + 1);
+    }
+
+    const onLeft = () => {
+        setPage(prevPage => Math.max(1, prevPage - 1));
+    }
+
     return <>
         <section className={styles.products}>
-        <Container>
-            <div className={styles.products__thumb}>
+            <Container>
+                <div className={styles.products__thumb}>
                     <h2 className={styles.products__title}>Популярні товари</h2>
                     <GrayBtn text='Всі товари' secondClass={styles.products__btn}/>
                 </div>
-                <ArrowBtn imgUrl={left} secondClass={styles.products__left}/>
+                <ArrowBtn changePage={onRight} imgUrl={left} secondClass={styles.products__left}/>
                 <ProductList/>
-                <ArrowBtn imgUrl={right} secondClass={styles.products__right}/>
-                <div className="pagination"></div>
-        </Container>
+                <ArrowBtn changePage={onLeft} imgUrl={right} secondClass={styles.products__right}/>
+                <div className="pagination">Page: {page}</div>
+            </Container>
         </section>
     </>
 }
-
-// <ul className={styles.products__list}>
-//                     {/* <ProductCard/>
-//                     <ProductCard isHidden={styles.isHidden}/>
-//                     <ProductCard isHidden={styles.isHidden__Desktop}/>
-//                     <ProductCard isHidden={styles.isHidden__Desktop}/> */}
-//                 </ul>
