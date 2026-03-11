@@ -14,6 +14,7 @@ export const ProductList = () => {
           <ProductCard 
             isHidden={styles.products__item} 
             product={product} 
+            key={product._id}
           />
         );
       })}

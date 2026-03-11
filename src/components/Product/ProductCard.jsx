@@ -11,7 +11,7 @@ export const ProductCard = ({ isHidden, product }) => {
   const {image, name, price, _id, info} = product;
   return (
     <>
-        <li  key={_id} className={`${styles.products__item} ${isHidden}`}>
+        <li className={`${styles.products__item} ${isHidden}`}>
           <img
             src={image}
             alt="popular coffee"
