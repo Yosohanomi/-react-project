@@ -5,26 +5,34 @@ import { Sidebar } from "./Sidebar/Sidebar";
 import { Container } from "../../components/Container/Container";
 import styles from './ProductsPage.module.css'
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
-import { Component } from "react";
 import { ProductList } from "../../components/ProductList/ProductList.jsx";
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductsContext/ProductsContext";
 
+export const ProductsPage = () => {
+    const { products } = useContext(ProductContext);
+    const itemsPerPage = 9;
 
-export class ProductsPage extends Component {
-    render() {
-       return <>
-        {/* <Header/> */}
+    return (
+        <>
+            {/* <Header/> */}
             <section className={styles.products}>
                 <Container>
                     <h3 className={styles.products__title}>Всі товари</h3>
                     <div className={styles.products__thumb}>
                         <Sidebar/>
-                        <ProductList/>
+                        <ProductList itemsPerPage={itemsPerPage} />
                     </div>
-                    <YellowBtn text="Показати більше" secondClass={styles.products__btn}/>
+                    
+                    {products.length > itemsPerPage && (
+                        <YellowBtn 
+                            text="Показати більше" 
+                            secondClass={styles.products__btn}
+                        />
+                    )}
                 </Container>
             </section>
-        {/* <Footer/> */}
-    </>
-    }
+            {/* <Footer/> */}
+        </>
+    );
 };
-
