@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import styles from "./ProductInfo.module.css";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
@@ -10,49 +9,30 @@ import { GrayBtn } from "../../components/GrayBtn/GrayBtn";
 import fullStar from "../../images/products/star_filled.png";
 import halfStar from "../../images/products/star_half.png";
 import { ProductComment } from "./ProductComment/ProductComment";
-import { ProductContext } from "../../context/ProductsContext/ProductsContext";
+
+import productImg from "../../images/productInfo/product.png";
 
 export const ProductInfo = () => {
-  const { selectedProduct } = useContext(ProductContext);
-
-  // Якщо товар не вибрано, показуємо заглушку
-  if (!selectedProduct) {
-    return (
-      <main>
-        <section className={styles.product} id="product-info">
-          <Container>
-            <div className={styles.placeholder}>
-              <p>Оберіть товар для перегляду детальної інформації</p>
-            </div>
-          </Container>
-        </section>
-      </main>
-    );
-  }
-
-  const { image, name, price, info, category } = selectedProduct;
-  const priceValue = price?.value || price || '0';
-
   return (
     <>
       {/* <Header /> */}
       <main>
-        <section className={styles.product} id="product-info"> {/* Додаємо id */}
+        <section className={styles.product}>
           <Container>
             <div className={styles.product__thumb}>
               <p className={styles.product__text}>Всі товари</p>
               <img src={arrow} alt="arrow" className={styles.product__arrow} />
-              <p className={styles.product__text}>{category || "Категорія"}</p>
+              <p className={styles.product__text}>Кавоварки та аксесуари</p>
               <img src={arrow} alt="arrow" className={styles.product__arrow} />
               <p className={`${styles.product__text} ${styles.currentProduct}`}>
-                {name}
+                Мока-пот Bialetti (3 порції)
               </p>
             </div>
 
             <div className={styles.product__container}>
               <img
-                src={image}
-                alt={name}
+                src={productImg}
+                alt="coffee"
                 className={styles.product__img}
               />
               <div className={styles.desktop__thumb}>
@@ -65,7 +45,7 @@ export const ProductInfo = () => {
                       className={styles.product__arrow}
                     />
                     <p className={styles.product__text}>
-                      {category || "Категорія"}
+                      Кавоварки та аксесуари
                     </p>
                     <img
                       src={arrow}
@@ -75,12 +55,14 @@ export const ProductInfo = () => {
                     <p
                       className={`${styles.product__text} ${styles.currentProduct}`}
                     >
-                      {name}
+                      Мока-пот Bialetti (3 порції)
                     </p>
                   </div>
-                  <h2 className={styles.product__title}>{name}</h2>
+                  <h2 className={styles.product__title}>
+                    Мока-пот Bialetti (3 порції)
+                  </h2>
                   <div className={styles.product__priceThumb}>
-                    <p className={styles.products__price}>{priceValue} грн</p>
+                    <p className={styles.products__price}>980 грн</p>
                     <Stars star={fullStar} star2={fullStar} star3={halfStar} />
                     <p className={styles.products__priceInfo}>(4.5)</p>
                     <p className={styles.products__priceInfo__comments}>
@@ -88,7 +70,15 @@ export const ProductInfo = () => {
                     </p>
                   </div>
                   <p className={styles.products__info}>
-                    {info || "Опис товару відсутній"}
+                    Мока-пот Bialetti — це легендарна італійська кавоварка, що
+                    вже понад 80 років символізує домашній еспресо. Завдяки
+                    класичній восьмигранній формі та високоякісному алюмінію,
+                    вона рівномірно розподіляє тепло та розкриває повний аромат
+                    кави. Ця модель розрахована на 3 порції (близько 150 мл
+                    готового напою), що робить її ідеальним вибором для
+                    невеликої родини або ранкової кави з друзями. Простий
+                    принцип роботи дозволяє отримати насичений еспресо навіть
+                    без електрики чи великих кавомашин.
                   </p>
                 </div>
                 <div className={styles.product__btn__thumb}>
