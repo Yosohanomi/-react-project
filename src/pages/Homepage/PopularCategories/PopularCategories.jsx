@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CategoryCard } from '../../../components/Category/CategoryCard';
 import { Container } from '../../../components/Container/Container';
 import { ArrowBtn } from '../../../components/ArrowBtn/ArrowBtn';
@@ -10,12 +10,26 @@ import { categoriesData } from '../../../data/categoriesData';
 
 export const PopularCategories = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    console.log(categoriesData);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     const categories = categoriesData;
-    console.log(categories);
-    
-    const itemsPerPage = 3;
+    useEffect(() => {
+        const updateItemsPerPage = () => {
+            const width = window.innerWidth;
+            if (width < 768) {
+                setItemsPerPage(1);
+            } else if (width < 1440) {
+                setItemsPerPage(2);
+            } else {
+                setItemsPerPage(3);
+            }
+        };
+        updateItemsPerPage();
+        window.addEventListener('resize', updateItemsPerPage);
+        return () => window.removeEventListener('resize', updateItemsPerPage);
+    }, []);
+
     const totalPages = Math.ceil(categories.length / itemsPerPage);
+    
     const getCurrentPageItems = () => {
         const startIndex = (currentPage - 1) * itemsPerPage;
         return categories.slice(startIndex, startIndex + itemsPerPage);
@@ -32,7 +46,6 @@ export const PopularCategories = () => {
             setCurrentPage(prev => prev - 1);
         }
     };
-
 
     const visibleCategories = getCurrentPageItems();
 
@@ -55,12 +68,10 @@ export const PopularCategories = () => {
                 />
 
                 <ul className={styles.category__list}>
-                    {visibleCategories.map((category, index) => (
+                    {visibleCategories.map((category) => (
                         <CategoryCard 
                             key={category.id}
                             category={category}
-                            isHidden={index >= 1 ? styles.isHidden : ''}
-                            secondClass={index >= 2 ? styles.isHidden__Desktop : ''} 
                         />
                     ))}
                 </ul>
@@ -71,6 +82,7 @@ export const PopularCategories = () => {
                     changePage={handlePrev}
                     disabled={currentPage === totalPages}
                 />
+                
                 <div className={styles.pagination}>
                     {currentPage} / {totalPages}
                 </div>

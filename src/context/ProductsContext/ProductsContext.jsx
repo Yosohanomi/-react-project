@@ -7,7 +7,7 @@ export const ProductProvider = ({ children }) => {
   const [page, setPage] = useState(1)
 
   const fetchProducts = async () => {
-      const response = await fetch(`https://695054968531714d9bd0565f.mockapi.io/students?page=${page}&limit=4`);
+      const response = await fetch(`https://695054968531714d9bd0565f.mockapi.io/students?page=${page}`);
       const data = await response.json();
       setProducts(data);
   };
