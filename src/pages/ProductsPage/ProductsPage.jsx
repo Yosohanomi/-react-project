@@ -6,12 +6,20 @@ import { Container } from "../../components/Container/Container";
 import styles from './ProductsPage.module.css'
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { ProductList } from "../../components/ProductList/ProductList.jsx";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductContext } from "../../context/ProductsContext/ProductsContext";
 
 export const ProductsPage = () => {
-    const { products } = useContext(ProductContext);
+    const { products, loadMore } = useContext(ProductContext);
+    const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 9;
+
+    const handleLoadMore = () => {
+        setCurrentPage(prev => prev + 1);
+        if (loadMore) {
+            loadMore(); // Завантажуємо більше товарів з API
+        }
+    };
 
     return (
         <>
@@ -21,13 +29,18 @@ export const ProductsPage = () => {
                     <h3 className={styles.products__title}>Всі товари</h3>
                     <div className={styles.products__thumb}>
                         <Sidebar/>
-                        <ProductList itemsPerPage={itemsPerPage} />
+                        <ProductList 
+                            secondClass={styles.products__list} 
+                            itemsPerPage={itemsPerPage} 
+                            currentPage={currentPage}
+                        />
                     </div>
                     
-                    {products.length > itemsPerPage && (
+                    {products.length > currentPage * itemsPerPage && (
                         <YellowBtn 
                             text="Показати більше" 
                             secondClass={styles.products__btn}
+                            onClick={handleLoadMore}
                         />
                     )}
                 </Container>

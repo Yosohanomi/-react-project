@@ -68,6 +68,8 @@
     margin: 0;
 }
 
+
+
 .pagination {
     display: block;
     text-align: center;
@@ -91,6 +93,10 @@
     .category__list {
         gap: 32px;
     }
+
+    .category__card {
+        width: 310px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -101,5 +107,9 @@
     
     .category__btn {
         font-size: 16px;
+    }
+
+    .category__card {
+        width: 416px;
     }
 }

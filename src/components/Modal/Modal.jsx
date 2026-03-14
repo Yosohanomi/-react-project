@@ -1,30 +1,44 @@
-
 import styles from './Modal.module.css'
+import { YellowBtn } from '../YellowBtn/YellowBtn'
+import { Stars } from '../Stars/Stars'
+import unfilledStar from '../../images/products/star_unfilled.png'
 
 export const Modal = ({closeModal}) => {
     
+    return ( 
+        <>
+            <div onClick={closeModal} className={styles.backdrop} data-modal>
+                <div className={styles.modal}>  
+                    <button className={styles.closeBtn} data-modal-close>
+                    </button>        
+                    <h2 className={styles.title}>Залишити відгук</h2>
+                    <form className={styles.form}>
+                        <label htmlFor="userName" className={styles.label}>Ваше імʼя</label>
+                        <input 
+                            id="userName" 
+                            type="text" 
+                            placeholder="Ваше імʼя" 
+                            className={styles.input}
+                        />
 
-
-    return ( <>
-        {/* <button class="open__btn" data-modal-close>
-                Open
-        </button>  */}
-        {/* ${styles.is_hidden} */}
-        <div onClick={closeModal} class={styles.backdrop} data-modal>
-        <div class={styles.modal}>  
-            <button class="close__btn" data-modal-close>
-                Close
-            </button>        
-            <h2>Залишити відгук</h2>
-            <form>
-                <label htmlFor="userName">Ваше імʼя</label>
-                <input id="userName" type="text" placeholder="Ваше імʼя" />
-
-                <label htmlFor="userReview">Відгук</label>
-                <textarea id="userReview">Ваш відгук</textarea>
-            </form>
-        </div>
-        </div>
+                        <label htmlFor="userReview" className={styles.label}>Відгук</label>
+                        <textarea 
+                            id="userReview" 
+                            placeholder="Ваш відгук"
+                            className={styles.textarea}
+                        />
+                    </form>
+                    <div className={styles.starsContainer}>
+                        <Stars 
+                            secondClass={styles.stars} 
+                            star={unfilledStar} 
+                            star2={unfilledStar} 
+                            star3={unfilledStar}
+                        />
+                    </div>
+                    <YellowBtn secondClass={styles.send__btn} text="Надіслати"/>
+                </div>
+            </div>
         </>
     )
 }

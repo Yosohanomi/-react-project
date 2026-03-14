@@ -10,18 +10,19 @@ import { ArrowBtn } from '../../../components/ArrowBtn/ArrowBtn';
 import { ProductContext } from '../../../context/ProductsContext/ProductsContext';
 
 export const PopularProducts = () => {
-    const { page, setPage, products } = useContext(ProductContext);
-    const [itemsPerPage, setItemsPerPage] = useState(4); // за замовчуванням десктоп
+    const { products } = useContext(ProductContext);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(4); 
 
     useEffect(() => {
         const updateItemsPerPage = () => {
             const width = window.innerWidth;
             if (width < 768) {
-                setItemsPerPage(1); // телефон: 1 товар
+                setItemsPerPage(1); 
             } else if (width < 1440) {
-                setItemsPerPage(2); // планшет: 2 товари
+                setItemsPerPage(2); 
             } else {
-                setItemsPerPage(4); // десктоп: 4 товари
+                setItemsPerPage(4); 
             }
         };
 
@@ -30,17 +31,16 @@ export const PopularProducts = () => {
         return () => window.removeEventListener('resize', updateItemsPerPage);
     }, []);
 
-    // Скидаємо на першу сторінку при зміні itemsPerPage
     useEffect(() => {
-        setPage(1);
-    }, [itemsPerPage, setPage]);
+        setCurrentPage(1);
+    }, [itemsPerPage]);
 
     const onRight = () => {
-        setPage(prevPage => prevPage + 1);
+        setCurrentPage(prev => prev + 1);
     }
 
     const onLeft = () => {
-        setPage(prevPage => Math.max(1, prevPage - 1));
+        setCurrentPage(prev => Math.max(1, prev - 1));
     }
 
     const totalPages = Math.ceil(products.length / itemsPerPage);
@@ -57,20 +57,24 @@ export const PopularProducts = () => {
                     changePage={onRight} 
                     imgUrl={left} 
                     secondClass={styles.products__left}
-                    disabled={page === 1}
+                    disabled={currentPage === 1}
                 />
                 
-                <ProductList itemsPerPage={itemsPerPage} />
+                <ProductList 
+                secondClass={styles.products__list}
+                    itemsPerPage={itemsPerPage} 
+                    currentPage={currentPage} 
+                />
                 
                 <ArrowBtn 
                     changePage={onLeft} 
                     imgUrl={right} 
                     secondClass={styles.products__right}
-                    disabled={page === totalPages}
+                    disabled={currentPage === totalPages}
                 />
                 
                 <div className={styles.pagination}>
-                    {page} / {totalPages}
+                    {currentPage} / {totalPages}
                 </div>
             </Container>
         </section>

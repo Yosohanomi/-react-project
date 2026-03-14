@@ -4,28 +4,31 @@ import styles from "./Product.module.css";
 import { Stars } from "../Stars/Stars";
 import { GrayBtn } from "../../components/GrayBtn/GrayBtn";
 
-
-
-
 export const ProductCard = ({ isHidden, product }) => {
-  const {image, name, price, _id, info} = product;
+  if (!product) return null;
+  
+  const { image, name, price, info, rate, produced } = product;
+
   return (
-    <>
-        <li className={`${styles.products__item} ${isHidden}`}>
-          <img
-            src={image}
-            alt="popular coffee"
-            className={styles.products__img}
-          />
-          <Stars star={filledStar} star2={filledStar} star3={halfStar} />
-          <h3 className={styles.products__item__title}>{name}</h3>
-          <p className={styles.products__item__text}>
-            {info}
-          </p>
-          <p className={styles.products__price}>{price.value}</p>
-          <GrayBtn text="Детальніше" />
-        </li>
-    </>
+    <li className={`${styles.products__item} ${isHidden}`}>
+      <img
+        src={image}
+        alt={name}
+        className={styles.products__img}
+        onError={(e) => {
+          e.target.src = 'https://via.placeholder.com/300x200?text=No+Image';
+        }}
+      />
+      <Stars 
+        star={filledStar} 
+        star2={filledStar} 
+        star3={halfStar} 
+        // rating={rate} 
+      />
+      <h3 className={styles.products__item__title}>{name}</h3>
+      <p className={styles.products__item__text}>{info}</p>
+      <p className={styles.products__price}>{price} грн</p>
+      <GrayBtn text="Детальніше" />
+    </li>
   );
 };
-

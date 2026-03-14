@@ -4,9 +4,32 @@ import { Logo } from '../Logo/Logo';
 import { YellowBtn } from '../YellowBtn/YellowBtn';
 import { GrayBtn } from '../GrayBtn/GrayBtn';
 import shoppingCart from '../../images/header-images/shopping_cart.png';
-
+import { useState } from "react"
+import { useEffect } from "react"
+import { CartModal } from '../CartModal/CartModal';
 
 export const Header = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    useEffect(()=> {
+        return ()=> {
+            window.removeEventListener("keydown", (e)=>{
+                if (e.key === "Escape") {
+                    setIsOpen(false)
+                }
+            })
+        }
+    }, [isOpen])
+    const closeModal =()=> {
+        setIsOpen(false) 
+    }
+    const openModal =()=> {
+        setIsOpen(true)
+        window.addEventListener("keydown", (e)=>{
+            if (e.key === "Escape") {
+                setIsOpen(false)
+            }
+        })
+    }
     return <>
         <header className={styles.header}>
         <Container>
@@ -45,13 +68,16 @@ export const Header = () => {
                     
                     
                 </div>
-                    <button className={styles.header__btn}>
+                    <button className={styles.header__btn} onClick={openModal}>
                         <img src={shoppingCart} alt="shopping cart" className={styles.header__img} />
                     </button>
                 </div>
         
             </div>
         </Container>
+        {isOpen && (
+            <CartModal closeModal={closeModal}/> 
+            )}    
         </header>
     </>
 }

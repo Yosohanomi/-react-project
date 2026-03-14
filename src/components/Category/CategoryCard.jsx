@@ -4,7 +4,7 @@ export const CategoryCard = ({ category, secondClass, isHidden }) => {
     if (!category) return null;
 
     return (
-        <li className={`${styles.category__item} ${secondClass || ''} ${isHidden || ''}`}>
+        <li className={`${styles.category__item} ${secondClass || ''} ${isHidden}`}>
             <img 
                 src={category.image} 
                 alt={category.name} 

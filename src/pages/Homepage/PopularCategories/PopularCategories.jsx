@@ -70,6 +70,7 @@ export const PopularCategories = () => {
                 <ul className={styles.category__list}>
                     {visibleCategories.map((category) => (
                         <CategoryCard 
+                        secondClass={styles.category__card}
                             key={category.id}
                             category={category}
                         />

@@ -11,35 +11,11 @@ export const Sidebar = () => {
     priceRange,
     setPriceRange,
     products,
-    allProducts
+    allProducts,
+    availableCategories,
+    availableBrands,
+    maxPrice
   } = useContext(ProductContext);
-
-  const categories = [
-    "Усі",
-    "Кава в зернах",
-    "Мелена кава",
-    "Кавоварки та аксесуари",
-    "Гаджети для бариста",
-    "Чашки та термоси",
-    "Фільтри та витратні матеріали",
-    "Капсульна кава",
-    "Розчинна кава",
-    "Сиропи та добавки",
-    "Подарункові набори",
-    "Зберігання кави",
-    "Печиво та солодощі до кави"
-  ];
-
-  const brands = [
-    "Lavazza",
-    "Illy",
-    "Bialetti",
-    "Hario",
-    "Timemore",
-    "Svit Kavy",
-    "Foundation Coffee Roasters",
-    "Rocket Espresso"
-  ];
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -54,13 +30,16 @@ export const Sidebar = () => {
   };
 
   const handlePriceChange = (e) => {
-    setPriceRange({ ...priceRange, max: parseInt(e.target.value) });
+    const value = parseInt(e.target.value);
+    if (!isNaN(value)) {
+      setPriceRange({ ...priceRange, max: value });
+    }
   };
 
   const clearAllFilters = () => {
     setSelectedCategory("Усі");
     setSelectedBrands([]);
-    setPriceRange({ min: 0, max: 5000 });
+    setPriceRange({ min: 0, max: maxPrice || 1000 });
   };
 
   const clearBrands = () => {
@@ -68,8 +47,11 @@ export const Sidebar = () => {
   };
 
   const clearPrice = () => {
-    setPriceRange({ min: 0, max: 5000 });
+    setPriceRange({ min: 0, max: maxPrice || 1000 });
   };
+
+  const safeMaxPrice = maxPrice && !isNaN(maxPrice) ? maxPrice : 1000;
+  const safeCurrentMax = priceRange?.max && !isNaN(priceRange.max) ? priceRange.max : safeMaxPrice;
 
   return (
     <>
@@ -85,7 +67,7 @@ export const Sidebar = () => {
         </div>
         
         <p className={styles.sidebarFilter__text}>
-          Показано {products.length} з {allProducts.length}
+          Показано {products?.length || 0} з {allProducts?.length || 0}
         </p>
         
         <div className={styles.input__thumb}>
@@ -102,7 +84,7 @@ export const Sidebar = () => {
             <nav className={styles.mobile__sidebarNav}>
               <div className={styles.mobile__sidebarFilter}>
                 <ul className={styles.mobile__sidebarNav__list}>
-                  {categories.map(category => (
+                  {availableCategories.map(category => (
                     <li 
                       key={category} 
                       className={`${styles.mobile__sidebarNav__item} ${selectedCategory === category ? styles.active : ''}`}
@@ -116,31 +98,33 @@ export const Sidebar = () => {
                 </ul>
               </div>
 
-              <div className={styles.mobile__sidebarBrands}>
-                <h3 className={styles.mobile__sidebarBrands__title}>
-                  Бренд/Виробник
-                </h3>
-                <button 
-                  className={styles.mobile__sidebarBrands__btn}
-                  onClick={clearBrands}
-                >
-                  Очистити
-                </button>
+              {availableBrands?.length > 0 && (
+                <div className={styles.mobile__sidebarBrands}>
+                  <h3 className={styles.mobile__sidebarBrands__title}>
+                    Бренд/Виробник
+                  </h3>
+                  <button 
+                    className={styles.mobile__sidebarBrands__btn}
+                    onClick={clearBrands}
+                  >
+                    Очистити
+                  </button>
 
-                <ul className={styles.mobile__sidebarBrands__list}>
-                  {brands.map(brand => (
-                    <li key={brand} className={styles.mobile__sidebarBrands__item}>
-                      <input
-                        type="checkbox"
-                        id={`mobile-${brand}`}
-                        checked={selectedBrands.includes(brand)}
-                        onChange={() => handleBrandChange(brand)}
-                      />
-                      <label htmlFor={`mobile-${brand}`}>{brand}</label>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  <ul className={styles.mobile__sidebarBrands__list}>
+                    {availableBrands.map(brand => (
+                      <li key={brand} className={styles.mobile__sidebarBrands__item}>
+                        <input
+                          type="checkbox"
+                          id={`mobile-${brand}`}
+                          checked={selectedBrands.includes(brand)}
+                          onChange={() => handleBrandChange(brand)}
+                        />
+                        <label htmlFor={`mobile-${brand}`}>{brand}</label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div className={styles.mobile__sidebarPrice}>
                 <h3 className={styles.mobile__sidebarPrice__title}>Ціна</h3>
@@ -155,24 +139,23 @@ export const Sidebar = () => {
                   type="range"
                   name="price"
                   min="0"
-                  max="5000"
-                  value={priceRange.max}
+                  max={safeMaxPrice}
+                  value={safeCurrentMax}
                   onChange={handlePriceChange}
                 />
                 <div className={styles.price__text}>
-                  <p className={styles.mobile__sidebarPriceMin}>{priceRange.min}</p>
-                  <p className={styles.mobile__sidebarPriceMax}>{priceRange.max}</p>
+                  <p className={styles.mobile__sidebarPriceMin}>0</p>
+                  <p className={styles.mobile__sidebarPriceMax}>{safeCurrentMax}</p>
                 </div>
               </div>
             </nav>
           </div>
         </div>
         
-        {/* not mobile */}
         <nav className={styles.sidebarNav}>
           <div className={styles.sidebarFilter}>
             <ul className={styles.sidebarNav__list}>
-              {categories.map(category => (
+              {availableCategories.map(category => (
                 <li 
                   key={category} 
                   className={`${styles.sidebarNav__item} ${selectedCategory === category ? styles.active : ''}`}
@@ -186,28 +169,30 @@ export const Sidebar = () => {
             </ul>
           </div>
 
-          <div className={styles.sidebarBrands}>
-            <h3 className={styles.sidebarBrands__title}>Бренд/Виробник</h3>
-            <button 
-              className={styles.sidebarBrands__btn}
-              onClick={clearBrands}
-            >
-              Очистити
-            </button>
-            <ul className={styles.sidebarBrands__list}>
-              {brands.map(brand => (
-                <li key={brand} className={styles.sidebarBrands__item}>
-                  <input
-                    type="checkbox"
-                    id={brand}
-                    checked={selectedBrands.includes(brand)}
-                    onChange={() => handleBrandChange(brand)}
-                  />
-                  <label htmlFor={brand}>{brand}</label>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {availableBrands?.length > 0 && (
+            <div className={styles.sidebarBrands}>
+              <h3 className={styles.sidebarBrands__title}>Бренд/Виробник</h3>
+              <button 
+                className={styles.sidebarBrands__btn}
+                onClick={clearBrands}
+              >
+                Очистити
+              </button>
+              <ul className={styles.sidebarBrands__list}>
+                {availableBrands.map(brand => (
+                  <li key={brand} className={styles.sidebarBrands__item}>
+                    <input
+                      type="checkbox"
+                      id={brand}
+                      checked={selectedBrands.includes(brand)}
+                      onChange={() => handleBrandChange(brand)}
+                    />
+                    <label htmlFor={brand}>{brand}</label>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className={styles.sidebarPrice}>
             <h3 className={styles.sidebarPrice__title}>Ціна</h3>
@@ -223,13 +208,13 @@ export const Sidebar = () => {
                 type="range"
                 name="price"
                 min="0"
-                max="5000"
-                value={priceRange.max}
+                max={safeMaxPrice}
+                value={safeCurrentMax}
                 onChange={handlePriceChange}
               />
               <div className={styles.sidebar__priceText}>
-                <p className={styles.sidebarPriceMin}>{priceRange.min}</p>
-                <p className={styles.sidebarPriceMax}>{priceRange.max}</p>
+                <p className={styles.sidebarPriceMin}>0</p>
+                <p className={styles.sidebarPriceMax}>{safeCurrentMax}</p>
               </div>
             </div>
           </div>

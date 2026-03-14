@@ -281,7 +281,6 @@
     .sidebar__price {
         display: flex;
         flex-direction: column;
-    gap: 400%;
     }
 
     .sidebar__priceText {
