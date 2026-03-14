@@ -1,3 +1,4 @@
+import { useState, useContext } from "react";
 import { Container } from "../../components/Container/Container";
 import styles from "./Order.module.css";
 import { Form } from "../../components/Form/Form";
@@ -6,8 +7,29 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import product from "../../images/Cart/Placeholder Image.png";
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
+import { ProductContext } from "../../context/ProductsContext/ProductsContext";
 
 export const Order = () => {
+  const { products } = useContext(ProductContext);
+  const [cartItems, setCartItems] = useState(products.slice(0, 4)); 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useState(() => {
+      const handleResize = () => {
+          setIsMobile(window.innerWidth < 768);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  const handleRemoveItem = (productId) => {
+      setCartItems(prevItems => prevItems.filter(item => item._id !== productId));
+  };
+
+  const totalPrice = cartItems.reduce((sum, product) => {
+      return sum + (product.price || 0);
+  }, 0);
+
   return (
     <>
       {/* <Header /> */}
@@ -20,31 +42,18 @@ export const Order = () => {
                 <h3 className={styles.thumb__title}>Товари</h3>
 
                 <ul className={styles.first__list}>
-                  <Cart
-                    title="Еспресо Класік"
-                    imgUrl={product}
-                    price="280 грн"
-                  />
-                  <Cart
-                    title="Термочашка Зернятко 350 мл"
-                    imgUrl={product}
-                    price="420 грн"
-                  />
-                  <Cart
-                    title="Мока-пот Bialetti (3 порції)"
-                    imgUrl={product}
-                    price="980 грн"
-                  />
-                  <Cart
-                    title="Кавомолка ручна SteelPro"
-                    imgUrl={product}
-                    price="670 грн"
-                  />
+                  {cartItems.map((item) => (
+                    <Cart
+                    key={item._id}
+                    product={item}
+                    onRemove={handleRemoveItem}
+                    />
+                  ))}
                 </ul>
 
                 <div className={styles.cash}>
                   <p className={styles.cash__text}>Проміжний підсумок</p>
-                  <p className={styles.cash__price}>2350 грн</p>
+                  <p className={styles.cash__price}>{totalPrice} грн</p>
                 </div>
 
                 <div className={styles.cash}>
@@ -57,7 +66,7 @@ export const Order = () => {
                     Всього
                   </p>
                   <p className={`${styles.cash__price} ${styles.summ}`}>
-                    2350 грн
+                    {totalPrice} грн
                   </p>
                 </div>
               </div>

@@ -8,6 +8,7 @@ import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { ProductList } from "../../components/ProductList/ProductList.jsx";
 import { useContext, useState } from "react";
 import { ProductContext } from "../../context/ProductsContext/ProductsContext";
+import { EmptyDiv } from "../../components/EmptyDiv/EmptyDiv.jsx";
 
 export const ProductsPage = () => {
     const { products, loadMore } = useContext(ProductContext);
@@ -29,11 +30,12 @@ export const ProductsPage = () => {
                     <h3 className={styles.products__title}>Всі товари</h3>
                     <div className={styles.products__thumb}>
                         <Sidebar/>
+                        {products.length > 0 ? 
                         <ProductList 
-                            secondClass={styles.products__list} 
-                            itemsPerPage={itemsPerPage} 
-                            currentPage={currentPage}
-                        />
+                        secondClass={styles.products__list} 
+                        itemsPerPage={itemsPerPage} 
+                        currentPage={currentPage}
+                    /> : <EmptyDiv secondClass={styles.emptyDiv} text="За вашим запитом не знайдено жодних товарів, спробуйте змінити фільтри, або скинути їх" btnText="Скинути фільтри"/>}
                     </div>
                     
                     {products.length > currentPage * itemsPerPage && (

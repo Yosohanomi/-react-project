@@ -10,8 +10,6 @@
     margin-bottom: 40px;
 }
 
-
-
 .products__btn {
     width: 100%;
     margin-top: 32px;
@@ -43,5 +41,8 @@
 
     .products__list li {
         width: 304px;
+    }
+    .emptyDiv {
+        width: 768px;
     }
 }

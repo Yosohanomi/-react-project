@@ -128,6 +128,16 @@
     width: 100%;
 }
 
+.centreEmpty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyDiv {
+    width: 100%;
+}
+
 @media screen and (min-width: 768px) {
     .backdrop {
         position: fixed;
@@ -236,7 +246,7 @@
         flex-direction: row;
         gap: 24px;
     }
-    
+
 }
 
 @media screen and (min-width: 1440px) {
