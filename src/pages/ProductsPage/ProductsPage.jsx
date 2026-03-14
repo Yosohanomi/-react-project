@@ -17,7 +17,7 @@ export const ProductsPage = () => {
     const handleLoadMore = () => {
         setCurrentPage(prev => prev + 1);
         if (loadMore) {
-            loadMore(); // Завантажуємо більше товарів з API
+            loadMore(); 
         }
     };
 
