@@ -2,6 +2,7 @@ import { ProductCard } from "../Product/ProductCard";
 import styles from "./ProductList.module.css";
 import { useContext } from "react";
 import { ProductContext } from '../../context/ProductsContext/ProductsContext';
+import { useMemo } from "react";
 
 export const ProductList = ({ itemsPerPage, currentPage, secondClass}) => {
     const { products } = useContext(ProductContext);

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styles from "./Sidebar.module.css";
 import { ProductContext } from "../../../context/ProductsContext/ProductsContext";
+import { useMemo } from "react";
 
 export const Sidebar = () => {
   const { 
@@ -16,7 +17,6 @@ export const Sidebar = () => {
     availableBrands,
     maxPrice
   } = useContext(ProductContext);
-
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
@@ -28,6 +28,11 @@ export const Sidebar = () => {
       setSelectedBrands([...selectedBrands, brand]);
     }
   };
+
+  const memoBrandChange = useMemo(
+    () => handleCategoryClick,
+    [products]
+  )
 
   const handlePriceChange = (e) => {
     const value = parseInt(e.target.value);
@@ -88,7 +93,7 @@ export const Sidebar = () => {
                     <li 
                       key={category} 
                       className={`${styles.mobile__sidebarNav__item} ${selectedCategory === category ? styles.active : ''}`}
-                      onClick={() => handleCategoryClick(category)}
+                      onClick={() => memoBrandChange}
                     >
                       <a href="#" className={styles.mobile__sidebarNav__link}>
                         {category}

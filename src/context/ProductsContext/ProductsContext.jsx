@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { createContext } from "react";
+import { useMemo } from "react";
 
 export const ProductContext = createContext(null);
 
@@ -35,7 +36,7 @@ const normalizeProduct = (product) => {
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [apiPage, setApiPage] = useState(1); // Перейменували на apiPage
+  const [apiPage, setApiPage] = useState(1); 
   const [selectedCategory, setSelectedCategory] = useState("Усі");
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [priceRange, setPriceRange] = useState({ min: 0, max: 1000 }); 
@@ -43,6 +44,7 @@ export const ProductProvider = ({ children }) => {
   const [availableBrands, setAvailableBrands] = useState([]);
   const [maxPrice, setMaxPrice] = useState(1000); 
   const [isLoading, setIsLoading] = useState(false);
+  
 
   const fetchProducts = async () => {
     setIsLoading(true);
@@ -63,6 +65,8 @@ export const ProductProvider = ({ children }) => {
         const newProducts = normalizedData.filter(p => !existingIds.has(p._id));
         return [...prevFiltered, ...newProducts];
       });
+
+      
       
     } catch (error) {
       console.error('Error fetching products:', error);
