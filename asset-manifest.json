@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/yosohanomi.github.io/-react-project/static/css/main.3e125ea7.css",
-    "main.js": "/yosohanomi.github.io/-react-project/static/js/main.b9e44fe4.js",
-    "static/media/product.png": "/yosohanomi.github.io/-react-project/static/media/product.dafa48439b48f377ca1b.png",
-    "static/media/hero_image.png": "/yosohanomi.github.io/-react-project/static/media/hero_image.0aba005f4d56a751c464.png",
-    "static/media/melena-coffee.png": "/yosohanomi.github.io/-react-project/static/media/melena-coffee.816b7f107e75c7ba52b9.png",
-    "static/media/product-coffee.png": "/yosohanomi.github.io/-react-project/static/media/product-coffee.0b1841b279b1fce82a85.png",
-    "static/media/Placeholder Image.png": "/yosohanomi.github.io/-react-project/static/media/Placeholder Image.32d017fe6e935551fe1d.png",
-    "index.html": "/yosohanomi.github.io/-react-project/index.html",
-    "main.3e125ea7.css.map": "/yosohanomi.github.io/-react-project/static/css/main.3e125ea7.css.map",
-    "main.b9e44fe4.js.map": "/yosohanomi.github.io/-react-project/static/js/main.b9e44fe4.js.map"
+    "main.css": "/-react-project/static/css/main.32935247.css",
+    "main.js": "/-react-project/static/js/main.aed59c3b.js",
+    "static/media/product.png": "/-react-project/static/media/product.dafa48439b48f377ca1b.png",
+    "static/media/hero_image.png": "/-react-project/static/media/hero_image.0aba005f4d56a751c464.png",
+    "static/media/zerna-coffee.png": "/-react-project/static/media/zerna-coffee.816b7f107e75c7ba52b9.png",
+    "static/media/melena-coffe.png": "/-react-project/static/media/melena-coffe.62a78358a0fc59629ca4.png",
+    "static/media/turks.png": "/-react-project/static/media/turks.50488a2b1557add25071.png",
+    "static/media/forBarista.png": "/-react-project/static/media/forBarista.cbd6203e7fdd3b571a35.png",
+    "static/media/filters.png": "/-react-project/static/media/filters.38adb8609c72fd0e0290.png",
+    "static/media/cups.png": "/-react-project/static/media/cups.ca626a96c70aa54d94a5.png",
+    "static/media/Placeholder Image.png": "/-react-project/static/media/Placeholder Image.32d017fe6e935551fe1d.png",
+    "index.html": "/-react-project/index.html",
+    "main.32935247.css.map": "/-react-project/static/css/main.32935247.css.map",
+    "main.aed59c3b.js.map": "/-react-project/static/js/main.aed59c3b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e125ea7.css",
-    "static/js/main.b9e44fe4.js"
+    "static/css/main.32935247.css",
+    "static/js/main.aed59c3b.js"
   ]
 }
