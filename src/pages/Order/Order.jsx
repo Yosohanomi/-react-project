@@ -6,6 +6,7 @@ import { Cart } from "../../components/Cart/Cart";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import product from "../../images/Cart/Placeholder Image.png";
+import { EmptyDiv } from "../../components/EmptyDiv/EmptyDiv";
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { ProductContext } from "../../context/ProductsContext/ProductsContext";
 
@@ -40,8 +41,9 @@ export const Order = () => {
             <div className={styles.big__thumb}>
               <div className={styles.first__element}>
                 <h3 className={styles.thumb__title}>Товари</h3>
-
-                <ul className={styles.first__list}>
+              {cartItems.length > 0
+               ?<>
+               <ul className={styles.first__list}>
                   {cartItems.map((item) => (
                     <Cart
                     key={item._id}
@@ -68,7 +70,8 @@ export const Order = () => {
                   <p className={`${styles.cash__price} ${styles.summ}`}>
                     {totalPrice} грн
                   </p>
-                </div>
+                </div> </>: <EmptyDiv secondClass={styles.emptyDiv} text="Ваш кошик порожній, мерщій до покупок!" btnText="До покупок"/>}
+                
               </div>
 
               <div className={styles.second__element}>
