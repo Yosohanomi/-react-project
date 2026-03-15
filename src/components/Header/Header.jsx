@@ -7,6 +7,7 @@ import shoppingCart from '../../images/header-images/shopping_cart.png';
 import { useState } from "react"
 import { useEffect } from "react"
 import { CartModal } from '../CartModal/CartModal';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -41,9 +42,9 @@ export const Header = () => {
                 </label>
                 <nav className={styles.header__nav}>
                     <ul className={styles.header__list}>
-                        <li className={styles.header__item}><a href="#" className={styles.header__link}>Головна</a></li>
-                        <li className={styles.header__item}><a href="#" className={styles.header__link}>Товари</a></li>
-                        <li className={styles.header__item}><a href="#" className={styles.header__link}>Категорії</a></li>
+                        <li className={styles.header__item}><NavLink to="/" className={styles.header__link}>Головна</NavLink></li>
+                        <li className={styles.header__item}><NavLink to="/products" className={styles.header__link}>Товари</NavLink></li>
+                        <li className={styles.header__item}><NavLink to="/categories" className={styles.header__link}>Категорії</NavLink></li>
                     </ul>
                 </nav>
                 {/* MOBILE MENU */}
