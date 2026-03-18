@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Container } from "../../components/Container/Container";
-import styles from "./Order.module.css";
+import styles from "./OrderPage.module.css";
 import { Form } from "../../components/Form/Form";
 import { Cart } from "../../components/Cart/Cart";
 import { Header } from "../../components/Header/Header";
@@ -33,7 +33,7 @@ export const Order = () => {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <section className={styles.order}>
           <Container>
@@ -97,7 +97,7 @@ export const Order = () => {
           </Container>
         </section>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

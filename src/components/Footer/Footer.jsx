@@ -7,6 +7,7 @@ import facebook from '../../images/footer/facebook.png'
 import instagram from '../../images/footer/instagram.png'
 import twitter from '../../images/footer/x.png'
 import youtube from '../../images/footer/youtube.png'
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return <>
@@ -16,9 +17,9 @@ export const Footer = () => {
                 <Logo/>
                     <div className={styles.footer__menu}>
                         <h5 className={styles.footer__menu__title}>Меню</h5>
-                        <a href="#" className={styles.footer__menu__text}>Головна</a>
-                        <a href="#" className={styles.footer__menu__text}>Товари</a>
-                        <a href="#" className={styles.footer__menu__text}>Категорії</a>
+                        <Link to='/' className={styles.footer__menu__text}>Головна</Link>
+                        <Link to='/products' className={styles.footer__menu__text}>Товари</Link>
+                        <Link to='/categories' className={styles.footer__menu__text}>Категорії</Link>
                     </div>
                     <div className={styles.footer__subscribe}>
                         <h5 className={styles.footer__subscribe__title}>Підписатися</h5>

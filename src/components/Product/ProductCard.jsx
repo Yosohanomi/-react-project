@@ -3,6 +3,7 @@ import halfStar from "../../images/products/star_half.png";
 import styles from "./Product.module.css";
 import { Stars } from "../Stars/Stars";
 import { GrayBtn } from "../../components/GrayBtn/GrayBtn";
+import { Link } from "react-router-dom";
 
 export const ProductCard = ({ isHidden, product }) => {
   if (!product) return null;
@@ -28,7 +29,7 @@ export const ProductCard = ({ isHidden, product }) => {
       <h3 className={styles.products__item__title}>{name}</h3>
       <p className={styles.products__item__text}>{info}</p>
       <p className={styles.products__price}>{price} грн</p>
-      <GrayBtn text="Детальніше" />
+      <GrayBtn><Link to='/productInfo'>Детальніше</Link></GrayBtn>
     </li>
   );
 };

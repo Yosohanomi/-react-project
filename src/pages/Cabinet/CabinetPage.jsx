@@ -1,6 +1,6 @@
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { GrayBtn } from "../../components/GrayBtn/GrayBtn";
-import styles from './Cabinet.module.css'
+import styles from './CabinetPage.module.css'
 import { Form } from "../../components/Form/Form";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
@@ -10,7 +10,7 @@ import { MyOrder } from '../../components/MyOrder/MyOrder'
 export const Cabinet = () => {
     return (
       <>
-        {/* <Header /> */}
+        <Header />
         <main>
           <section className={styles.cabinet}>
             <Container>
@@ -41,7 +41,7 @@ export const Cabinet = () => {
             </Container>
           </section>
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </>
     );
   };

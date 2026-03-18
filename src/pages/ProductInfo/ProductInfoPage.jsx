@@ -1,4 +1,4 @@
-import styles from "./ProductInfo.module.css";
+import styles from "./ProductInfoPage.module.css";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { Container } from "../../components/Container/Container";
@@ -15,7 +15,7 @@ import productImg from "../../images/productInfo/product.png";
 export const ProductInfo = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <section className={styles.product}>
           <Container>
@@ -106,7 +106,7 @@ export const ProductInfo = () => {
 
         <ProductComment />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

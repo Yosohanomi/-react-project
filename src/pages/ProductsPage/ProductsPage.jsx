@@ -24,7 +24,7 @@ export const ProductsPage = () => {
 
     return (
         <>
-            {/* <Header/> */}
+            <Header/>
             <section className={styles.products}>
                 <Container>
                     <h3 className={styles.products__title}>Всі товари</h3>
@@ -47,7 +47,7 @@ export const ProductsPage = () => {
                     )}
                 </Container>
             </section>
-            {/* <Footer/> */}
+            <Footer/>
         </>
     );
 };

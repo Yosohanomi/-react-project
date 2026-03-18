@@ -4,6 +4,7 @@ import { GrayBtn } from "../../../components/GrayBtn/GrayBtn";
 import styles from './Hero.module.css';
 
 import heroImage from '../../../images/hero-images/hero_image.png';
+import { Link } from "react-router-dom";
 export const Hero = () => {
     return <>
         <section className="hero">
@@ -13,8 +14,8 @@ export const Hero = () => {
                         <h1 className={styles.hero__title}>Зернятко — твій шлях до справжньої кави</h1>
                         <p className={styles.hero__text}>Ми створили місце, де кожен знайде все для свого кавового ритуалу: від зерен преміум-якості до стильних аксесуарів для приготування. Почни день із натхненням та обирай товари, що розкривають унікальний смак твоєї кави.</p>
                         <div className={styles.hero__btn__thumb}>
-                            <YellowBtn text="До товарів"/>
-                            <GrayBtn text="Дослідити категорії"/>
+                            <YellowBtn><Link to="/products">До товарів</Link></YellowBtn>
+                            <GrayBtn><Link to="/categories">Дослідити категорії</Link></GrayBtn>
                         </div>
                     </div>
                     

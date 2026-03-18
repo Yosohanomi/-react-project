@@ -3,11 +3,14 @@ import { Homepage } from './pages/Homepage/Homepage';
 import resetCss from './components/Reset/Reset.css'
 import { ProductsPage } from './pages/ProductsPage/ProductsPage';
 import {Routes, Route } from "react-router";
-import { CategoriesList } from './pages/CategoriesList/CategoriesList';
-import { ProductInfo } from './pages/ProductInfo/ProductInfo';
-import { Order } from './pages/Order/Order';
-import { Cabinet } from './pages/Cabinet/Cabinet';
+import { CategoriesList } from './pages/CategoriesList/CategoriesListPage';
+import { ProductInfo } from './pages/ProductInfo/ProductInfoPage';
+import { Order } from './pages/Order/OrderPage';
+import { Cabinet } from './pages/Cabinet/CabinetPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { Register } from './pages/Register/RegisterPage';
+import { Login } from './pages/Login/LoginPage'
+
 
 function App() {
 
@@ -22,6 +25,8 @@ function App() {
         <Route path="/productInfo" element={<ProductInfo/>}/>
         <Route path="/order" element={<Order/>}/>
         <Route path="/cabinet" element={<Cabinet/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
         <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
     </div>

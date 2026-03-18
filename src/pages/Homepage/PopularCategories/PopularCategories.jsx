@@ -7,6 +7,7 @@ import styles from './PopularCategories.module.css';
 import right from '../../../images/arrows/right.png';
 import left from '../../../images/arrows/left.png';
 import { categoriesData } from '../../../data/categoriesData';
+import { Link } from 'react-router-dom';
 
 export const PopularCategories = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -55,9 +56,8 @@ export const PopularCategories = () => {
                 <div className={styles.category__thumb}>
                     <h2 className={styles.category__title}>Популярні категорії</h2>
                     <GrayBtn 
-                        text="Всі категорії" 
                         secondClass={styles.category__btn}
-                    />
+                    ><Link to="/categories">Всі категорії</Link></GrayBtn>
                 </div>
 
                 <ArrowBtn 

@@ -5,13 +5,6 @@ import { PopularProducts } from "./PopularProducts/PopularProducts";
 import { Reasons } from "./Reasons/Reasons";
 import { PopularCategories } from "./PopularCategories/PopularCategories";
 import { Comments } from "./Comments/Comments";
-import { CategoriesList } from "../CategoriesList/CategoriesList";
-import {ProductsList, ProductsPage} from "../ProductsPage/ProductsPage"
-import { ProductInfo } from "../ProductInfo/ProductInfo";
-import { Order } from "../Order/Order";
-import { Cabinet } from "../Cabinet/Cabinet"
-import { Register } from "../Register/Register";
-import { Login } from "../Login/Login";
 
 export const Homepage = () => {
     return <>
@@ -22,13 +15,6 @@ export const Homepage = () => {
             <Reasons/>
             <PopularCategories/>
             <Comments/>
-            <CategoriesList/>
-            <ProductInfo/>
-            <Order/>
-            <Cabinet/>
-            <Register/>
-            <Login/>
-            <ProductsPage/>
         </main>
         <Footer/>
     </>

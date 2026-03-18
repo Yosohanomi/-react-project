@@ -3,7 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import { CategoryCard } from "../../components/Category/CategoryCard";
 import { Container } from "../../components/Container/Container";
-import styles from './CategoriesList.module.css'
+import styles from './CategoriesListPage.module.css'
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { categoriesData } from "../../data/categoriesData";
 

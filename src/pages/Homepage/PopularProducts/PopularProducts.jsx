@@ -8,6 +8,7 @@ import left from '../../../images/arrows/left.png';
 import { ProductList } from '../../../components/ProductList/ProductList';
 import { ArrowBtn } from '../../../components/ArrowBtn/ArrowBtn';
 import { ProductContext } from '../../../context/ProductsContext/ProductsContext';
+import { Link } from "react-router-dom";
 
 export const PopularProducts = () => {
     const { products } = useContext(ProductContext);
@@ -50,7 +51,7 @@ export const PopularProducts = () => {
             <Container>
                 <div className={styles.products__thumb}>
                     <h2 className={styles.products__title}>Популярні товари</h2>
-                    <GrayBtn text='Всі товари' secondClass={styles.products__btn}/>
+                    <GrayBtn secondClass={styles.products__btn}><Link to='/products'>Всі товари</Link></GrayBtn>
                 </div>
                 
                 <ArrowBtn 

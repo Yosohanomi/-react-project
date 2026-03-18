@@ -1,8 +1,9 @@
-import styles from "./Register.module.css";
+import styles from "./RegisterPage.module.css";
 import { InputForm } from "../../components/InputForm/InputForm";
 import { YellowBtn } from "../../components/YellowBtn/YellowBtn";
 import { Container } from "../../components/Container/Container";
 import { Logo } from "../../components/Logo/Logo";
+import { Link } from "react-router-dom";
 
 export const Register = () => {
   return (
@@ -11,8 +12,8 @@ export const Register = () => {
 
       <Container>
         <div className={styles.register__buttons}>
-          <button className={styles.register__btn}>Реєстрація</button>
-          <button className={styles.register__btn}>Вхід</button>
+          <button className={styles.register__btn}><Link to='/register'>Реєстрація</Link></button>
+          <button className={styles.register__btn}><Link to='/login'>Вхід</Link></button>
         </div>
 
         <h2 className={styles.register__title}>Реєстрація</h2>
