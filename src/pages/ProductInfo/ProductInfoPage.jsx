@@ -9,10 +9,14 @@ import { GrayBtn } from "../../components/GrayBtn/GrayBtn";
 import fullStar from "../../images/products/star_filled.png";
 import halfStar from "../../images/products/star_half.png";
 import { ProductComment } from "./ProductComment/ProductComment";
+import { useContext, useState } from "react";
+import { ProductContext } from '../../context/ProductsContext/ProductsContext';
 
 import productImg from "../../images/productInfo/product.png";
 
 export const ProductInfo = () => {
+  const { products } = useContext(ProductContext);
+  const {product, setProduct} = useState(null)
   return (
     <>
       <Header />

@@ -8,10 +8,11 @@ import { Link } from "react-router-dom";
 export const ProductCard = ({ isHidden, product }) => {
   if (!product) return null;
   
-  const { image, name, price, info, rate, produced } = product;
+  const { image, name, price, info, rate, produced, _id } = product;
 
   return (
     <li className={`${styles.products__item} ${isHidden}`}>
+      <p>{_id}</p>
       <img
         src={image}
         alt={name}
@@ -29,7 +30,7 @@ export const ProductCard = ({ isHidden, product }) => {
       <h3 className={styles.products__item__title}>{name}</h3>
       <p className={styles.products__item__text}>{info}</p>
       <p className={styles.products__price}>{price} грн</p>
-      <GrayBtn><Link to='/productInfo'>Детальніше</Link></GrayBtn>
+      <GrayBtn><Link to='productInfo.title'>Детальніше</Link></GrayBtn>
     </li>
   );
 };
